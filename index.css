@@ -1,0 +1,207 @@
+* {
+    margin:0;
+    padding: 0;
+    border: none;
+    overflow-x: hidden;
+    background-color: rgb(220, 217, 212);
+    font-family: 'Caslon';
+    cursor: url('Cursor/CursorHand.png'), auto;
+}
+
+@font-face { 
+    font-family: 'Caslon'; 
+    src: url(Typeface/Caslon.otf);
+} 
+
+.hover-text:hover {
+    color: red; /* Color on hover */
+}
+
+h1 {
+    font-size: 2.4em;
+    padding-left: 0.7%;
+    padding-top: 0.7%;
+}
+
+h2 {
+    font-size: 1.82em;
+    padding-left: 0.7%;
+    padding-right: 0.7%;
+}
+
+
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+}
+
+/* Hyperlinks: */
+.hyperlink:hover {
+    color: red; /* Color on hover */
+}
+
+/* Footer Landing Page */
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7%;
+    box-sizing: border-box;
+    align-items: flex-end;
+}
+
+
+/* Highlighted Text Red */
+::selection {
+    background: red;
+    color: white; /* Optional: change the text color when selected */
+}
+
+/* For Firefox */
+::-moz-selection {
+    background: red;
+    color: white; /* Optional: change the text color when selected */
+}
+
+/* Apply custom cursor to all video controls */
+video::-webkit-media-controls-panel {
+    cursor: url('Cursor/CursorHand.png'), auto;
+}
+
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-volume-slider,
+video::-webkit-media-controls-mute-button,
+video::-webkit-media-controls-fullscreen-button,
+video::-webkit-media-controls-timeline {
+    cursor: url('Cursor/CursorHand.png'), auto;
+}
+
+
+/* Back Button */
+.back-button {
+    border: 0.075em solid black;
+    border-radius: 2.2em;
+    padding: 0.34%;
+    background-color: transparent;
+    color: black;
+    position: absolute;
+    top: 0.87em;
+    right: 0.87em;
+    font-family: Caslon;
+}
+
+.back-button:hover {
+    color: red;
+    border-color: red;
+}
+
+
+
+/* Image container for random collage */
+.image-collage-container {
+    position: relative;
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1em;
+}
+
+/* Random images */
+.image-collage-container img {
+    object-fit: contain; /* Ensure the full image is visible without being cut off */
+    position: relative;
+    margin: 0.5em;
+}
+
+
+
+
+
+
+
+        /* Modal container */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(220, 217, 212, 0.9); /* Black background with opacity */
+            justify-content: center;
+            align-items: center;
+            cursor: url('Cursor/CursorHand.png'), auto;
+        }
+
+        /* Close button (X) */
+        #close {
+            position: absolute;
+            top: 0.4em;
+            right: 0.8em;
+            color: black;
+            font-size: 50px;
+            font-weight: bold;
+            background: none; /* Remove grey background */
+            border: none; /* Remove any border */
+            outline: none; /* Remove outline */
+            cursor: url('Cursor/CursorHand.png'), auto; /* Apply custom cursor */
+        }
+
+        #close:hover, #close:focus {
+            color: red;
+            text-decoration: none;
+            cursor: url('Cursor/CursorHand.png'), auto; /* Ensure custom cursor on hover */
+        }
+
+        /* Modal Image */
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            margin-top: 2.5em;
+            background: none; /* Ensure no background is applied to the content */
+        }
+
+        /* Hide video by default */
+        #modal-video {
+            display: none;
+        }
+
+        /* Image container for random collage */
+        .media-collage-container {
+            position: relative;
+            margin-top: 1em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1em;
+        }
+
+        /* Random images and videos */
+        .media-collage-container img,
+        .media-collage-container video {
+            object-fit: contain; /* Ensure the full media is visible without being cut off */
+            position: relative;
+            margin: 0.5em;
+        }
+
+
+
+        
+
+
+
+
+
+
+
+
+
+

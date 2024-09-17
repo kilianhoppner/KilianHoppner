@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="shortcut icon" href="Favicon/FaviconPink.png" type="image/x-icon">
+    <title>Not The Big Issue</title>
+</head>
+
+<body>
+    <button class="back-button" onclick="location.href='index.html'"><h2>index</h2></button>
+    <h1 class="large-button">Not The Big Issue</h1>
+    <h2 class="small-button">Brand Refresh</h2>
+    <h2 style="padding-top: 0.2em;">The objective for the design refresh of The Big Issue is to create a brand that embodies inclusivity and celebrates the inherent self-worth of its vendors. At the same time, the aim is to cultivate a brand identity that resonates with the public, fostering empathy, understanding, and support for its mission. By infusing the brand with a new, modern design aesthetic, the goal is to not only enhance its visual appeal but also make it more accessible and engaging to a broader audience. This will elevate The Big Issue as not only a platform for social change but also as a beacon of hope within our communities.</h2>
+
+    <!-- Fullscreen Modal for Image -->
+    <div id="modal" class="modal">
+        <span id="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+    </div>
+
+    <!-- JavaScript code -->
+    <script>
+        const images = [
+            'A-FrameTBI.png', 'AmySpread.png', 'ClimateChangeSpread.png', 'BillboardMockUp.png',
+            'CoverPage1.png', 'CoverPage2.png', 'CoverPage3.png', 'CoverPage4.png', 
+            'CustomTypeface.png', 'PinMockup1.png', 'PinMockup2.png', 'TBI-Logo-Animated.gif'
+        ];
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function getRandomSize() {
+            const minSize = 200;
+            const maxSize = 400;
+            return Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize;
+        }
+
+        function insertRandomImages() {
+            const container = document.createElement('div');
+            container.classList.add('image-collage-container');
+            document.body.appendChild(container);
+
+            const shuffledImages = shuffleArray(images);
+
+            shuffledImages.forEach((imageName) => {
+                const img = document.createElement('img');
+                img.src = `NotTheBigIssue/${imageName}`;
+                img.style.width = `${getRandomSize()}px`;
+                img.style.height = 'auto';
+
+                // Add event listener for click to show the modal
+                img.addEventListener('click', function () {
+                    const modal = document.getElementById("modal");
+                    const modalImg = document.getElementById("modal-image");
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                });
+
+                container.appendChild(img);
+            });
+        }
+
+        window.onload = insertRandomImages;
+
+        // Close the modal
+        document.getElementById('close').onclick = function () {
+            document.getElementById('modal').style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
