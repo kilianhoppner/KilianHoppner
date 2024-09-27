@@ -81,9 +81,7 @@
                         // Ensure modal video has no controls and loops
                         modalVideo.controls = false;
                         modalVideo.loop = true;
-
-                        // Mute the video to allow autoplay on mobile
-                        modalVideo.muted = true; // Keep muted
+                        modalVideo.muted = false; // Unmute the video when opened in modal
                         modalVideo.play(); // Play the video on modal open
                     }
 
@@ -105,7 +103,6 @@
             modal.style.display = "none";
             modalImg.src = '';
             modalVideo.src = '';
-            modalVideo.pause(); // Pause the video when closing the modal
         }
     </script>
 </body>
