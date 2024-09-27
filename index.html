@@ -9,28 +9,106 @@
 
 <body>
     
-<h1><a href="NotTheBigIssue.html">Not The Big Issue</h1>
-<h1><a href="TheWeatherRoom.html">The Weather Room</h1>
-<h1><a href="FeelingFroggy.html">Feeling Froggy</h1>
-<h1><a href="FermeLesYeux.html">Ferme Les Yeux</h1>
-<h1><a href="DaddyLovesYou.html">Daddy Loves You</h1>
-<h1><a href="Manifesto.html">Manifesto</h1>
-<h1><a href="Contact.html">Contact</h1>
-               
-    
-    <div class="footer">
-        <h2>
-            <span>©2024 </span><br>
-            <span>Kilian Höppner</span><br>
-        </h2>
-    </div>
-</body>
+<h1><a href="NotTheBigIssue.html" id="NotTheBigIssue">Not The Big Issue</a></h1>
+<h1><a href="TheWeatherRoom.html" id="TheWeatherRoom">The Weather Room</a></h1>
+<h1><a href="FeelingFroggy.html" id="FeelingFroggy">Feeling Froggy</a></h1>
+<h1><a href="FermeLesYeux.html" id="FermeLesYeux">Ferme Les Yeux</a></h1>
+<h1><a href="DaddyLovesYou.html" id="DaddyLovesYou">Daddy Loves You</a></h1>
+<h1><a href="Manifesto.html" id="Manifesto">Manifesto</a></h1>
+<h1><a href="Contact.html" id="Contact">Contact</a></h1>
+
+<!-- Hidden images for each header -->
+<img id="hover-image-ntbi" src="NotTheBigIssue/CoverPage3.png"/>
+<img id="hover-image-twr" src="TheWeatherRoom/2.png"/>
+<img id="hover-image-ff" src="FeelingFroggy/bedroomfrog.png"/>
+<img id="hover-image-fly" src="FermeLesYeux/2.png"/>
+<img id="hover-image-dly" src="DaddyLovesYou/2.png"/>
+
+<div class="footer">
+    <h2>
+        <span>©2024 </span><br>
+        <span>Kilian Höppner</span><br>
+    </h2>
+</div>
+
+
+
+
+
+
+<script>
+    // Function to show/hide hover images for specific headers
+    function handleHover(headerId, imageId) {
+        const header = document.getElementById(headerId);
+        const image = document.getElementById(imageId);
+
+        header.addEventListener('mouseenter', function() {
+            image.style.display = 'block';
+        });
+
+        header.addEventListener('mouseleave', function() {
+            image.style.display = 'none';
+        });
+    }
+
+    // Applying hover functionality to each header and its corresponding image
+    handleHover('NotTheBigIssue', 'hover-image-ntbi');
+    handleHover('TheWeatherRoom', 'hover-image-twr');
+    handleHover('FeelingFroggy', 'hover-image-ff');
+    handleHover('FermeLesYeux', 'hover-image-fly');
+    handleHover('DaddyLovesYou', 'hover-image-dly');
+</script>
+
+
+
 
 <style>
+    h1 a:hover {
+        color: red; /* Text colour when hovered over within h1 headers */
+    }
 
-h1 a:hover {
-    color: red; /* Text colour when hovered over within h1 headers */
-}
+    /* General styling for hover images */
+    #hover-image-ntbi,
+    #hover-image-twr,
+    #hover-image-ff,
+    #hover-image-fly,
+    #hover-image-dly {
+        display: none;
+        position: absolute;
+        max-width: 15em;
+        max-height: 15em;
+        object-fit: contain;
+    }
 
+    /* Specific positioning for each hover image */
+    #hover-image-ntbi {
+        top: 1%;
+        left: 30%;
+    }
+
+    #hover-image-twr {
+        top: 4%;
+        left: 40%;
+    }
+
+    #hover-image-ff {
+        top: 11%;
+        left: 27%;
+    }
+
+    #hover-image-fly {
+        top: 15%;
+        left: 50%; /* Adjust as needed */
+    }
+
+    #hover-image-dly {
+        top: 23%;
+        left: 30%; /* Adjust as needed */
+    }
 </style>
+
+
+
+
+</body>
 </html>
