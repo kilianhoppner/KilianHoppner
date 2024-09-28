@@ -10,7 +10,7 @@
 
 @font-face { 
     font-family: 'Caslon'; 
-    src: url(Typeface/SelfModernRegular.otf);
+    src: url(Typeface/Signifier-Extralight.otf);
 } 
 
 .hover-text:hover {
@@ -191,6 +191,11 @@ video::-webkit-media-controls-timeline {
             position: relative;
             margin: 0.5em;
         }
+
+
+
+
+
 
 
 
