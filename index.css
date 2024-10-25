@@ -107,7 +107,7 @@ a {
 @media (max-width: 768px) {
     .container img,
     .container video {
-        width: 98vw; /* Sets width relative to the viewport on mobile */
+        width: 99vw; /* Sets width relative to the viewport on mobile */
         max-height: none; /* Removes the height constraint on smaller screens */
     }
 }
