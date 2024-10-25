@@ -3,14 +3,13 @@
     padding: 0;
     border: none;
     overflow-x: hidden;
-    background-color: rgb(220, 217, 212);
-    font-family: 'Caslon';
-    cursor: url('Cursor/CursorHand.png'), auto;
+    background-color: black;
+    font-family: 'Eliza';
 }
 
 @font-face { 
-    font-family: 'Caslon'; 
-    src: url(Typeface/SelfModernRegular.otf);
+    font-family: 'Eliza'; 
+    src: url(Typeface/ElizaMono.ttf);
 } 
 
 .hover-text:hover {
@@ -18,15 +17,12 @@
 }
 
 h1 {
-    font-size: 2.2em;
-    padding-left: 0.7%;
-    padding-top: 0.7%;
-}
-
-h2 {
-    font-size: 1.6em;
-    padding-left: 0.7%;
-    padding-right: 0.7%;
+    font-size: 0.9em;
+    padding-left: 0.8%;
+    padding-right: 0.8%;
+    padding-top: 0.8%;
+    color: white;
+    /* max-width: 45em; */
 }
 
 
@@ -39,19 +35,6 @@ a {
 /* Hyperlinks: */
 .hyperlink:hover {
     color: red; /* Color on hover */
-}
-
-/* Footer Landing Page */
-.footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.7%;
-    box-sizing: border-box;
-    align-items: flex-end;
 }
 
 
@@ -67,31 +50,20 @@ a {
     color: white; /* Optional: change the text color when selected */
 }
 
-/* Apply custom cursor to all video controls */
-video::-webkit-media-controls-panel {
-    cursor: url('Cursor/CursorHand.png'), auto;
-}
 
-video::-webkit-media-controls-play-button,
-video::-webkit-media-controls-volume-slider,
-video::-webkit-media-controls-mute-button,
-video::-webkit-media-controls-fullscreen-button,
-video::-webkit-media-controls-timeline {
-    cursor: url('Cursor/CursorHand.png'), auto;
-}
 
 
 /* Back Button */
 .back-button {
-    border: 0.075em solid black;
+    border: 0.075em solid rgb(255, 255, 255);
     border-radius: 2em;
-    padding: 0.3%;
+    padding: 0.28%;
     background-color: transparent;
-    color: black;
+    color: rgb(255, 255, 255);
     position: absolute;
-    top: 0.87em;
-    right: 0.87em;
-    font-family: Caslon;
+    top: 0.8%;
+    right: 0.89em;
+    font-family: Scotch;
 }
 
 .back-button:hover {
@@ -99,101 +71,39 @@ video::-webkit-media-controls-timeline {
     border-color: red;
 }
 
+.back-button:hover h1 {
+    color: red; /* Ensures the text inside the button changes to red on hover */
+}
 
 
-/* Image container for random collage */
-.image-collage-container {
-    position: relative;
-    margin-top: 1em;
+
+
+
+/* General container style for centering and layout */
+.container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.8em;
 }
 
-/* Random images */
-.image-collage-container img {
-    object-fit: contain; /* Ensure the full image is visible without being cut off */
-    position: relative;
-    margin: 0.5em;
+/* Image styling */
+.container img {
+    max-width: 35em; /* Scale the images so they don't take up the whole screen */
+    max-height: 30em;
+    height: auto;
+    margin-bottom: 1.8em; /* Adds space between images */
 }
 
+/* Video styling */
+.container video {
+    max-width: 35em; /* Same width for video */
+    height: auto;
+    margin-bottom: 1.8em; /* Adds space between video and other content */
+}
 
-
-
-
-
-
-        /* Modal container */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; 
-            z-index: 1; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(220, 217, 212, 0.9); /* Black background with opacity */
-            justify-content: center;
-            align-items: center;
-            cursor: url('Cursor/CursorHand.png'), auto;
-        }
-
-        /* Close button (X) */
-        #close {
-            position: absolute;
-            top: 0.4em;
-            right: 0.8em;
-            color: black;
-            font-size: 50px;
-            font-weight: bold;
-            background: none; /* Remove grey background */
-            border: none; /* Remove any border */
-            outline: none; /* Remove outline */
-            cursor: url('Cursor/CursorHand.png'), auto; /* Apply custom cursor */
-        }
-
-        #close:hover, #close:focus {
-            color: red;
-            text-decoration: none;
-            cursor: url('Cursor/CursorHand.png'), auto; /* Ensure custom cursor on hover */
-        }
-
-        /* Modal Image */
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
-            margin-top: 2.5em;
-            background: none; /* Ensure no background is applied to the content */
-        }
-
-        /* Hide video by default */
-        #modal-video {
-            display: none;
-        }
-
-        /* Image container for random collage */
-        .media-collage-container {
-            position: relative;
-            margin-top: 1em;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 1em;
-        }
-
-        /* Random images and videos */
-        .media-collage-container img,
-        .media-collage-container video {
-            object-fit: contain; /* Ensure the full media is visible without being cut off */
-            position: relative;
-            margin: 0.5em;
-        }
-
-
-
+        
 
 
 

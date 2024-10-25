@@ -5,106 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="shortcut icon" href="Favicon/FaviconPink.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Favicon/Favicon.png" type="image/x-icon">
     <title>Ferme Les Yeux</title>
 </head>
 
 <body>
-    <button class="back-button" onclick="location.href='index.html'"><h2>index</h2></button>
-    <h1 class="large-button">Ferme Les Yeux</h1>
-    <h2 class="small-button">Art Direction, Modelling</h2>
-    <h2 style="padding-top: 0.2em;">Ferme Les Yeux is an installation piece exhibited as part of the 2024 Melbourne Art Book Fair. It intricately weaves together excerpts from the book Siddhartha by Hermann Hesse, leveraging its profound insights to delve into the fluidity of relationships. Through Siddhartha’s journey, it navigates the ever-changing dynamics of human connections, illuminating the enduring nature of bonds and the profound impact they have on individual growth and understanding. Photography by Ronald Liao.</h2>
+    <button class="back-button" onclick="location.href='index.html'"><h1>index</h1></button>
+    <h1>Ferme Les Yeux</h1>
+    <h1>[Art Direction, Modelling]</h1>
+    <h1>Ferme Les Yeux is an installation piece exhibited as part of the 2024 Melbourne Art Book Fair. It intricately weaves together excerpts from the book Siddhartha by Hermann Hesse, leveraging its profound insights to delve into the fluidity of relationships. Through Siddhartha’s journey, it navigates the ever-changing dynamics of human connections, illuminating the enduring nature of bonds and the profound impact they have on individual growth and understanding. Photography by Ronald Liao.</h1>
 
-    <!-- Fullscreen Modal for Image and Video -->
-    <div id="modal" class="modal">
-        <span id="close">&times;</span>
-        <img class="modal-content" id="modal-image" style="display:none;">
-        <video class="modal-content" id="modal-video" autoplay muted loop style="display:none;"></video>
+    <div class="container">
+        <img src="FermeLesYeux/OxfordNextStatesmaller.png" style="max-height: 100em;" alt="Image 1">
+        <img src="FermeLesYeux/1.png" alt="Image 2">
+        <img src="FermeLesYeux/2.png" alt="Image 3">
+        <img src="FermeLesYeux/8.png" alt="Image 4">
+        <img src="FermeLesYeux/10.png" alt="Image 5">
     </div>
-
-    <!-- JavaScript code -->
-    <script>
-        const mediaFiles = [
-        '1.png', '2.png', '3.png', '4.png',
-        '5.png', '6.png', '8.png'
-        ];
-
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        function getRandomSize() {
-            const minSize = 200;
-            const maxSize = 400;
-            return Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize;
-        }
-
-        function insertRandomMedia() {
-            const container = document.createElement('div');
-            container.classList.add('media-collage-container');
-            document.body.appendChild(container);
-
-            const shuffledMedia = shuffleArray(mediaFiles);
-
-            shuffledMedia.forEach((mediaName) => {
-                const mediaElement = document.createElement(mediaName.endsWith('.mp4') ? 'video' : 'img');
-                mediaElement.src = `FermeLesYeux/${mediaName}`;
-                mediaElement.style.width = `${getRandomSize()}px`;
-                mediaElement.style.height = 'auto';
-
-                if (mediaElement.tagName.toLowerCase() === 'video') {
-                    mediaElement.controls = false; // Remove video controls
-                    mediaElement.autoplay = true; // Autoplay the video
-                    mediaElement.muted = true; // Mute the video
-                    mediaElement.loop = true; // Loop the video
-                }
-
-                // Add event listener for click to show the modal
-                mediaElement.addEventListener('click', function () {
-                    const modal = document.getElementById("modal");
-                    const modalImg = document.getElementById("modal-image");
-                    const modalVideo = document.getElementById("modal-video");
-
-                    if (this.tagName.toLowerCase() === 'img') {
-                        modalImg.src = this.src;
-                        modalImg.style.display = "block";
-                        modalVideo.style.display = "none";
-                    } else if (this.tagName.toLowerCase() === 'video') {
-                        modalVideo.src = this.src;
-                        modalVideo.style.display = "block";
-                        modalImg.style.display = "none";
-
-                        // Ensure modal video has no controls and loops
-                        modalVideo.controls = false;
-                        modalVideo.loop = true;
-                        modalVideo.muted = false; // Unmute the video when opened in modal
-                        modalVideo.play(); // Play the video on modal open
-                    }
-
-                    modal.style.display = "block";
-                });
-
-                container.appendChild(mediaElement);
-            });
-        }
-
-        window.onload = insertRandomMedia;
-
-        // Close the modal
-        document.getElementById('close').onclick = function () {
-            const modal = document.getElementById('modal');
-            const modalImg = document.getElementById("modal-image");
-            const modalVideo = document.getElementById("modal-video");
-
-            modal.style.display = "none";
-            modalImg.src = '';
-            modalVideo.src = '';
-        }
-    </script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Index</title>
-    <link rel="shortcut icon" href="Favicon/FaviconPink.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Favicon/Favicon.png" type="image/x-icon">
     
         <!-- Meta description for better search results -->
         <meta name="Kilian Höppner" content="Art & design portfolio.">
@@ -15,28 +15,31 @@
 </head>
 
 <body>
-    
-<h1><a href="NotTheBigIssue.html" id="NotTheBigIssue">Not The Big Issue</a></h1>
-<h1><a href="TheWeatherRoom.html" id="TheWeatherRoom">The Weather Room</a></h1>
-<h1><a href="FeelingFroggy.html" id="FeelingFroggy">Feeling Froggy</a></h1>
-<h1><a href="FermeLesYeux.html" id="FermeLesYeux">Ferme Les Yeux</a></h1>
-<h1><a href="DaddyLovesYou.html" id="DaddyLovesYou">Daddy Loves You</a></h1>
-<h1><a href="Manifesto.html" id="Manifesto">Manifesto</a></h1>
-<h1><a href="Contact.html" id="Contact">Contact</a></h1>
+<h1>Hey! My name is Kilian and I am a Melbourne-based graphic designer. In my exploration of communication, I’m mostly silly but can sometimes be serious, reminding us of our collective belonging. With an interest in the extreme sides of the spectrum and the tension in between, each project becomes a canvas for exploration. For collaborations, get in touch <a href="mailto:kilianhoppner@gmail.com?subject=spicy%20collab!" class="hyperlink"><u>here</u></a>.</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Selected Work</h1>   
+<br>
+<h1><a href="Nonsense.html" id="Nonsense">→ Nonsense</a></h1>
+<h1><a href="TheWeatherRoom.html" id="TheWeatherRoom">→ The Weather Room</a></h1>
+<h1><a href="Branches.html" id="Branches">→ Branches</a></h1>
+<h1><a href="NotTheBigIssue.html" id="NotTheBigIssue">→ Not The Big Issue</a></h1>
+<h1><a href="FermeLesYeux.html" id="FermeLesYeux">→ Ferme Les Yeux</a></h1>
+<h1><a href="DaddyLovesYou.html" id="DaddyLovesYou">→ Daddy Loves You</a></h1>
+
 
 <!-- Hidden images for each header -->
-<img id="hover-image-ntbi" src="NotTheBigIssue/CoverPage3.png" alt="Not The Big Issue"/>
+<img id="hover-image-n" src="Nonsense/Nonsense3.png" alt="Nonsense"/>
 <img id="hover-image-twr" src="TheWeatherRoom/2.png" alt="The Weather Room"/>
-<img id="hover-image-ff" src="FeelingFroggy/bedroomfrog.png" alt="Feeling Froggy"/>
+<img id="hover-image-b" src="Branches/Branches1.png" alt="Branches"/>
+<img id="hover-image-ntbi" src="NotTheBigIssue/CoverPage3.png" alt="Not The Big Issue"/>
 <img id="hover-image-fly" src="FermeLesYeux/2.png" alt="Ferme Les Yeux"/>
 <img id="hover-image-dly" src="DaddyLovesYou/2.png" alt="Daddy Loves You"/>
 
-<div class="footer">
-    <h2>
-        <span>©2024 </span><br>
-        <span>Kilian Höppner</span><br>
-    </h2>
-</div>
+
 
 <script>
     // Function to show/hide hover images for specific headers
@@ -56,9 +59,10 @@
     // Check if the device width is greater than 768 pixels
     if (window.innerWidth > 768) {
         // Applying hover functionality to each header and its corresponding image
-        handleHover('NotTheBigIssue', 'hover-image-ntbi');
+        handleHover('Nonsense', 'hover-image-n');
         handleHover('TheWeatherRoom', 'hover-image-twr');
-        handleHover('FeelingFroggy', 'hover-image-ff');
+        handleHover('Branches', 'hover-image-b');
+        handleHover('NotTheBigIssue', 'hover-image-ntbi');
         handleHover('FermeLesYeux', 'hover-image-fly');
         handleHover('DaddyLovesYou', 'hover-image-dly');
     } else {
@@ -75,43 +79,22 @@
     }
 
     /* General styling for hover images */
-    #hover-image-ntbi,
+    #hover-image-n,
     #hover-image-twr,
-    #hover-image-ff,
+    #hover-image-b,
+    #hover-image-ntbi,
     #hover-image-fly,
     #hover-image-dly {
         display: none;
         position: absolute;
-        max-width: 15em;
-        max-height: 15em;
+        max-height: 20em;
+        max-width: 25em;
         object-fit: contain;
+        top: 22.5%;
+        left: 26%;
     }
 
-    /* Specific positioning for each hover image */
-    #hover-image-ntbi {
-        top: 1%;
-        left: 30%;
-    }
-
-    #hover-image-twr {
-        top: 4%;
-        left: 40%;
-    }
-
-    #hover-image-ff {
-        top: 11%;
-        left: 27%;
-    }
-
-    #hover-image-fly {
-        top: 15%;
-        left: 50%; /* Adjust as needed */
-    }
-
-    #hover-image-dly {
-        top: 23.5%;
-        left: 31.5%; /* Adjust as needed */
-    }
+ 
 </style>
 
 </body>
