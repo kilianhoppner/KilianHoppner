@@ -103,6 +103,14 @@ a {
     margin-bottom: 1.8em; /* Adds space between video and other content */
 }
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .container img,
+    .container video {
+        width: 90vw; /* Sets width relative to the viewport on mobile */
+        max-height: none; /* Removes the height constraint on smaller screens */
+    }
+}
         
 
 
