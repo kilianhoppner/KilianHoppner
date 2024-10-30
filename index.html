@@ -23,6 +23,7 @@
 <br>
 <h1>Selected Work</h1>   
 <br>
+<h1><a href="TakeItSlow.html" id="TakeItSlow">→ Take It Slow</a></h1>
 <h1><a href="Nonsense.html" id="Nonsense">→ Nonsense</a></h1>
 <h1><a href="TheWeatherRoom.html" id="TheWeatherRoom">→ The Weather Room</a></h1>
 <h1><a href="Branches.html" id="Branches">→ Branches</a></h1>
@@ -32,6 +33,7 @@
 
 
 <!-- Hidden images for each header -->
+<img id="hover-image-tis" src="TakeItSlow/3.png" alt="Take It Slow"/>
 <img id="hover-image-n" src="Nonsense/Nonsense3.png" alt="Nonsense"/>
 <img id="hover-image-twr" src="TheWeatherRoom/2.png" alt="The Weather Room"/>
 <img id="hover-image-b" src="Branches/Branches1.png" alt="Branches"/>
@@ -59,6 +61,7 @@
     // Check if the device width is greater than 768 pixels
     if (window.innerWidth > 768) {
         // Applying hover functionality to each header and its corresponding image
+        handleHover('TakeItSlow', 'hover-image-tis');
         handleHover('Nonsense', 'hover-image-n');
         handleHover('TheWeatherRoom', 'hover-image-twr');
         handleHover('Branches', 'hover-image-b');
@@ -79,6 +82,7 @@
     }
 
     /* General styling for hover images */
+    #hover-image-tis,
     #hover-image-n,
     #hover-image-twr,
     #hover-image-b,
