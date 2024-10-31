@@ -12,16 +12,69 @@
 <button class="back-button" onclick="location.href='index.html'"><h1>index</h1></button>
 <h1>Nonsense</h1>
 <h1>[Type Design]</h2>
-<h1>Nonsense is a typeface initially created for a rebrand of The Big Issue Australia. Each glyph has unique characteristics, celebrating diversity and reflecting the distinct attributes of cultures in society. By creating a typeface filled with juxtapositions, imperfections and anomalies, I aim to highlight that while people may not always share values, we must respect each other and co-exist peacefully, to create a more sustainable and inclusive future. By applying the typeface on multi-coloured gradients in my type specimen design, I emphasise our inherent interconnectivity and encourage community building over mass polarisation.</h1>
+    <h1>
+        Nonsense is a typeface initially created for a rebrand of <a href="https://thebigissue.org.au/"  class="hyperlink"><u>The Big Issue Australia</u></a>. Each glyph has unique characteristics, celebrating diversity and reflecting the distinct attributes of cultures in society. By creating a typeface filled with juxtapositions, imperfections and anomalies, I aim to highlight that while people may not always share values, we must respect each other and co-exist peacefully, to create a more sustainable and inclusive future. By applying the typeface on multi-coloured gradients in my type specimen design, I emphasise our inherent interconnectivity and encourage community building over mass polarisation.</h1>
+    
 
-
-<div class="container">
-    <img src="Nonsense/Nonsense1.png" alt="Image 1">
-    <img src="Nonsense/Nonsense2.png" alt="Image 2">
-    <img src="Nonsense/Nonsense3.png" alt="Image 3">
-    <img src="Nonsense/Nonsense4.png" alt="Image 4">
-
+<div>
+    <h1 class="size-display120px">Font Size: 120px</h1>
+    <div contenteditable="true" class="editable-text120px" style="font-family: 'Nonsense';">Diversity</div>
+    <h1 class="size-display50px">Font Size: 50px</h1>
+    <div contenteditable="true" class="editable-text50px" style="font-family: 'Nonsense';" >Legendary k-punk futurist Mark Fisher provided a laser-sharp critique of to- day’s late-capitalist society. The claim of this text is that the last forty years have been about the exorcising of “the spectre of a world which could be free”. </div>
+    <h1 style="padding-bottom: 0.8%;">
+        <a class="hyperlink" href="https://drive.google.com/uc?id=1AROik9cCnILtHF5RYD101x4F0kCEwMgO" download>
+            ↓ type specimen
+        </a>
+        <span style="margin: 1em;"> </span>
+        <a class="hyperlink" href="https://drive.google.com/file/d/1JjXCqzjYKU15CRE54Y9sFr0xfCk5Q0_k/view?usp=sharing" download>
+            ↓ download
+        </a>
+    </h1>
 </div>
+
+<script>
+
+// Function to update the font size display
+function updateFontSizeDisplay(editableTextClass, displayTextClass) {
+    const editableText = document.querySelector(editableTextClass);
+    const fontSizeDisplay = document.querySelector(displayTextClass);
+
+    // Get the computed font size of the editable text
+    const computedFontSize = getComputedStyle(editableText).fontSize;
+    
+    // Convert the computed font size from "px" to a number
+    const fontSizeValue = parseFloat(computedFontSize);
+
+    // Round up to the nearest whole number
+    const roundedFontSize = Math.ceil(fontSizeValue);
+
+    // Update the text content of the font size display
+    fontSizeDisplay.textContent = `Font Size: ${roundedFontSize}px`;
+}
+
+// Add event listeners to update the display on input and window resize
+const editableText120px = document.querySelector('.editable-text120px');
+const editableText50px = document.querySelector('.editable-text50px');
+
+// Update display for editable-text120px
+editableText120px.addEventListener('input', () => updateFontSizeDisplay('.editable-text120px', '.size-display120px'));
+window.addEventListener('resize', () => {
+    updateFontSizeDisplay('.editable-text120px', '.size-display120px');
+});
+
+// Update display for editable-text50px
+editableText50px.addEventListener('input', () => updateFontSizeDisplay('.editable-text50px', '.size-display50px'));
+window.addEventListener('resize', () => {
+    updateFontSizeDisplay('.editable-text50px', '.size-display50px');
+});
+
+// Initial calls to set the correct size on page load
+updateFontSizeDisplay('.editable-text120px', '.size-display120px');
+updateFontSizeDisplay('.editable-text50px', '.size-display50px');
+
+
+</script>
+
 </body>
 
 </html>

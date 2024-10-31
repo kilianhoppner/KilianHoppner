@@ -5,11 +5,22 @@
     overflow-x: hidden;
     background-color: black;
     font-family: 'Eliza';
+    cursor: pointer;
 }
 
 @font-face { 
     font-family: 'Eliza'; 
     src: url(Typeface/ElizaMono.ttf);
+} 
+
+@font-face { 
+    font-family: 'Nonsense'; 
+    src: url(Typeface/Nonsense.otf);
+} 
+
+@font-face { 
+    font-family: 'Branches'; 
+    src: url(Typeface/Branches.otf);
 } 
 
 .hover-text:hover {
@@ -114,6 +125,50 @@ a {
         
 
 
+/* Nonsense Editable */
+
+.size-display120px {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 11em;
+}
+
+.editable-text120px {
+    font-size: clamp(90px, 10vw, 120px); /* Responsive font size */
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    cursor: text;
+    text-align: center;
+    padding-left: 0.8%;
+    padding-right: 0.8%;
+    letter-spacing: 0.01em;
+}
+
+.size-display50px {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 11em;
+    margin-bottom: 2.5em;
+}
+
+.editable-text50px {
+    font-size: clamp(20px, 6vw, 50px); /* Responsive font size */
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    cursor: text;
+    text-align: center;
+    padding-left: 0.8%;
+    padding-right: 0.8%;
+    margin-bottom: 3em;
+    word-spacing: 0.05em;
+}
+
+
+/* Branches Editable */
 
 
 
