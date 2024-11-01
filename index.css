@@ -28,7 +28,7 @@
 }
 
 h1 {
-    font-size: clamp(0.9em, 1.2vw, 4em); /* Responsive font size */
+    font-size: clamp(0.9em, 1.2vw, 10em); /* Responsive font size */
     padding-left: 1.2%;
     padding-right: 1.2%;
     padding-top: 1.2%;
@@ -135,7 +135,7 @@ a {
 }
 
 .editable-text120px {
-    font-size: clamp(80px, 9vw, 240px); /* Responsive font size */
+    font-size: clamp(80px, 9vw, 400px); /* Responsive font size */
     outline: none;
     border: none;
     background: transparent;
@@ -155,7 +155,7 @@ a {
 }
 
 .editable-text50px {
-    font-size: clamp(30px, 3.45vw, 120px); /* Responsive font size */
+    font-size: clamp(30px, 3.45vw, 300px); /* Responsive font size */
     outline: none;
     border: none;
     background: transparent;
