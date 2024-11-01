@@ -134,7 +134,7 @@ a {
 }
 
 .editable-text120px {
-    font-size: clamp(80px, 9vw, 200px); /* Responsive font size */
+    font-size: clamp(80px, 9vw, 240px); /* Responsive font size */
     outline: none;
     border: none;
     background: transparent;
