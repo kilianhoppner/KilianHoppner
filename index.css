@@ -96,29 +96,29 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 1.8em;
+    margin-top: 2.5vw;
 }
 
 /* Image styling */
 .container img {
-    max-width: 35em; /* Scale the images so they don't take up the whole screen */
-    max-height: 30em;
+    max-width: 50vw; /* Scale the images so they don't take up the whole screen */
+    max-height: 73vh;
     height: auto;
-    margin-bottom: 1.8em; /* Adds space between images */
+    margin-bottom: 2.5vw; /* Adds space between images */
 }
 
 /* Video styling */
 .container video {
-    max-width: 35em; /* Same width for video */
+    max-width: 50vw; /* Scale the images so they don't take up the whole screen */
     height: auto;
-    margin-bottom: 1.8em; /* Adds space between video and other content */
+    margin-bottom: 2.5vw; /* Adds space between video and other content */
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .container img,
     .container video {
-        width: 97.7%; /* Sets width relative to the viewport on mobile */
+        max-width: 97.7%; /* Sets width relative to the viewport on mobile */
         max-height: none; /* Removes the height constraint on smaller screens */
     }
 }
