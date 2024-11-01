@@ -68,7 +68,7 @@ a {
 .back-button {
     border: 0.075em solid rgb(255, 255, 255);
     border-radius: 10em;
-    padding: 0.28%;
+    padding: 0.28vw;
     background-color: transparent;
     color: rgb(255, 255, 255);
     position: absolute;
