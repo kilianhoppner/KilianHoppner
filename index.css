@@ -130,7 +130,7 @@ a {
 .size-display120px {
     color: #ffffff;
     text-align: center;
-    margin-top: 7em;
+    margin-top: 6.2em;
     margin-bottom: 0.1em;
 }
 
@@ -142,15 +142,15 @@ a {
     color: #ffffff;
     cursor: text;
     text-align: center;
-    padding-left: 0.8%;
-    padding-right: 0.8%;
+    padding-left: 1.2%;
+    padding-right: 1.2%;
     letter-spacing: 0.01em;
 }
 
 .size-display50px {
     color: #ffffff;
     text-align: center;
-    margin-top: 7em;
+    margin-top: 6.2em;
     margin-bottom: 2em;
 }
 
@@ -162,8 +162,8 @@ a {
     color: #ffffff;
     cursor: text;
     text-align: center;
-    padding-left: 0.8%;
-    padding-right: 0.8%;
+    padding-left: 1.2%;
+    padding-right: 1.2%;
     margin-bottom: 3em;
     word-spacing: 0.05em;
 }
