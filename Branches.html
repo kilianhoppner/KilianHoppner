@@ -71,6 +71,23 @@
     // Initial calls to set the correct size on page load
     updateFontSizeDisplay('.editable-text120px', '.size-display120px');
     updateFontSizeDisplay('.editable-text50px', '.size-display50px');
+
+    // 'Branches' when enter key is pressed
+
+function applyEnterKeyBehavior(className) {
+        document.querySelectorAll(className).forEach(element => {
+            element.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    document.execCommand('insertHTML', false, '<br><span style="font-family: \'Branches\';">​</span>');
+                }
+            });
+        });
+    }
+
+    // Apply Enter key behavior for both classes
+    applyEnterKeyBehavior('.editable-text120px');
+    applyEnterKeyBehavior('.editable-text50px');
     
     
     </script>
