@@ -23,26 +23,31 @@
         <img src="TheWeatherRoom/5.png" alt="Image 5">
         <img src="TheWeatherRoom/6.png" alt="Image 6">
         <img src="TheWeatherRoom/settingup2.png" alt="Setting up">
-        <video id="myVideo" src="TheWeatherRoom/TheWeatherRoom.mp4" autoplay muted loop></video>
+        <video id="myVideo" src="TheWeatherRoom/TheWeatherRoom.mp4" autoplay muted loop playsinline></video>
     </div>
 
 
     <script>
-        const video = document.getElementById('myVideo');
-        
-        // Add an event listener for the click event
-        video.addEventListener('click', function() {
-          // Toggle the mute state on click
+      const video = document.getElementById('myVideo');
+      
+      // Attempt to autoplay when the document loads
+      document.addEventListener('DOMContentLoaded', function() {
+          video.play().catch(error => {
+              // Handle autoplay restrictions on mobile, if needed
+              console.log("Autoplay prevented on mobile. User interaction required.");
+          });
+      });
+  
+      // Add an event listener for the click event to toggle mute
+      video.addEventListener('click', function() {
           if (video.muted) {
-            video.muted = false;  // Unmute the video
-            video.play();  // Ensure it keeps playing
+              video.muted = false;
+              video.play();
           } else {
-            video.muted = true;  // Mute the video again if clicked twice
+              video.muted = true;
           }
-        });
-        
-            </script>
-
+      });
+  </script>
 
 </body>
 
