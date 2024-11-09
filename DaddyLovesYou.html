@@ -15,7 +15,7 @@
     <h1>[3D Modelling, Animation]</h1>
     <h1>Daddy Loves You is an animated 3D model inspired by the artist Paul Yore. It invites viewers into a world where everything is seemingly perfect, prompting reflection on the stark contrasts between this idealised reality and the pressing issues in our world, such as social inequality, environmental degradation and media influence.</h1>
     <div class="container">
-        <video id="myVideo" src="DaddyLovesYou/PaulYoreHomage.mp4" autoplay muted loop></video>
+        <video id="myVideo" src="DaddyLovesYou/PaulYoreHomage.mp4" autoplay muted loop playsinline></video>
         <img src="DaddyLovesYou/2.png" alt="Image 2">
         <img src="DaddyLovesYou/3.png" alt="Image 3">
         <img src="DaddyLovesYou/4.png" alt="Image 4">
@@ -24,21 +24,27 @@
     </div>
 
     <script>
-        const video = document.getElementById('myVideo');
-        
-        // Add an event listener for the click event
-        video.addEventListener('click', function() {
-          // Toggle the mute state on click
+      const video = document.getElementById('myVideo');
+      
+      // Attempt to autoplay when the document loads
+      document.addEventListener('DOMContentLoaded', function() {
+          video.play().catch(error => {
+              // Handle autoplay restrictions on mobile, if needed
+              console.log("Autoplay prevented on mobile. User interaction required.");
+          });
+      });
+  
+      // Add an event listener for the click event to toggle mute
+      video.addEventListener('click', function() {
           if (video.muted) {
-            video.muted = false;  // Unmute the video
-            video.play();  // Ensure it keeps playing
+              video.muted = false;
+              video.play();
           } else {
-            video.muted = true;  // Mute the video again if clicked twice
+              video.muted = true;
           }
-        });
-        
-            </script>
-$
+      });
+  </script>
+
 </body>
 
 </html>
