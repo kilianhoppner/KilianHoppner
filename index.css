@@ -41,7 +41,7 @@ margin: 1%;
     font-weight: normal;
     padding:0;
     margin:0;
-    font-size: clamp(1.2em, 1vw, 10em);
+    font-size: clamp(1.185em, 1vw, 10em);
     line-height: 0;
 }
 
