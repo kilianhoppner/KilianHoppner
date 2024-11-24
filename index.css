@@ -1,39 +1,77 @@
 * {
-    margin:0;
+    margin: 0;
     padding: 0;
     border: none;
     overflow-x: hidden;
-    background-color: black;
-    font-family: 'Eliza';
-    cursor: pointer;
+    /* cursor: pointer; */
+    font-family: 'AS60';
+    cursor: url('Cursor/CursorHand.png'), auto;
+}
+
+body {
+background: linear-gradient(to bottom, rgb(255, 29, 184), rgb(68, 15, 226), rgb(15, 226, 54)); /* Static vertical gradient from black to blue */
+margin: 1%;
 }
 
 @font-face { 
-    font-family: 'Eliza'; 
-    src: url(Typeface/ElizaMono.ttf);
+    font-family: 'AS60'; 
+    src: url(Typeface/authentic-sans-condensed-60.otf);
 } 
+
+
+@font-face { 
+    font-family: 'AS130'; 
+    src: url(Typeface/authentic-sans-condensed-130.otf);
+} 
+
+.authenticsans130 {
+    font-family: 'AS130';
+}
+
+
 
 @font-face { 
     font-family: 'Nonsense'; 
     src: url(Typeface/Nonsense.otf);
+
 } 
+
+.nonsense {
+    font-family: 'Nonsense';
+    font-weight: normal;
+    padding:0;
+    margin:0;
+    font-size: clamp(1.2em, 1vw, 10em);
+    line-height: 0;
+}
+
+
 
 @font-face { 
     font-family: 'Branches'; 
     src: url(Typeface/Branches.otf);
 } 
 
+
+
 .hover-text:hover {
-    color: red; /* Color on hover */
+    color: yellow; /* Color on hover */
 }
 
 h1 {
-    font-size: clamp(0.9em, 1.2vw, 10em); /* Responsive font size */
-    padding-left: 1.2%;
-    padding-right: 1.2%;
-    padding-top: 1.2%;
+    font-size: clamp(1.8em, 3.6vw, 20em); /* Responsive font size */
     color: white;
-    /* max-width: 45em; */
+    background-color: transparent;
+    font-weight: normal;
+    line-height: 1.15;
+    } 
+    
+
+
+h2 {
+    font-size: clamp(1.2em, 2.3vw, 20em);
+    color: white;
+    background-color: transparent;
 }
 
 
@@ -41,50 +79,65 @@ h1 {
 a {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit color from parent */
+    
 }
 
 /* Hyperlinks: */
 .hyperlink:hover {
-    color: red; /* Color on hover */
+    color: yellow; /* Color on hover */
+    cursor: url('Cursor/CursorHand.png'), auto;
 }
 
 
-/* Highlighted Text Red */
+/* Highlighted Text Yellow */
 ::selection {
-    background: red;
-    color: white; /* Optional: change the text color when selected */
+    background: yellow;
+    color: rgb(0, 0, 0); /* Optional: change the text color when selected */
 }
 
 /* For Firefox */
 ::-moz-selection {
-    background: red;
-    color: white; /* Optional: change the text color when selected */
+    background: yellow;
+    color: rgb(0, 0, 0); /* Optional: change the text color when selected */
 }
 
 
+/* Icons Index Page */
 
+i {
+    color: rgb(255, 255, 255); /* Default color for icons */
+    vertical-align: -0.03em; /* Adjusts the icon to move slightly up from the middle line */
+    font-size: 0.78em; /* Set the icon size to 90% of the h1 font size */
+}
 
-/* Back Button */
+/* Index Back Button */
+
 .back-button {
-    border: 0.075em solid rgb(255, 255, 255);
-    border-radius: 10em;
-    padding: 0.28vw;
-    background-color: transparent;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 1.2%;
-    right: 1.2%;
-    font-family: Scotch;
+    border: 0.05em solid rgb(255, 255, 255); /* White border */
+    border-radius: 10em; /* Circular edges */
+    padding: 0.25em; /* Padding for spacing */
+    background: linear-gradient(135deg, #e7e4e4, #ab9d9d, #d0cdcd);
+    color: rgb(255, 255, 255); /* White text color */
+    position: fixed; /* Keeps the button in the same position relative to the viewport */
+    top: 1%; /* Distance from the top of the viewport */
+    right: 1%; /* Distance from the right of the viewport */
+    text-align: center; /* Centres the text */
+    line-height: 1; /* Ensures proper alignment */
+    box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.6), inset 0 0 5px rgba(255, 255, 255, 0.4); /* Soft outer shadow and inner shine */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transition on hover */
+    font-size: clamp(1.8em, 3.6vw, 20em); /* Responsive font size */
 }
 
 .back-button:hover {
-    color: red;
-    border-color: red;
+    /* color: red;  */
+    /* border-color: red;  */
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.6); /* Enhanced shadow and stronger inner shine on hover */
+    transform: translateY(-4px); /* Button appears to lift slightly on hover */
+    background: linear-gradient(135deg, #e7e4e4, #ab9d9d, #d0cdcd);
 }
 
-.back-button:hover h1 {
-    color: red; /* Ensures the text inside the button changes to red on hover */
-}
+
+
 
 
 
@@ -96,7 +149,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2.3vw;
+    margin-top: 2vw;
 }
 
 /* Image styling */
@@ -104,72 +157,74 @@ a {
     max-width: 50vw; /* Scale the images so they don't take up the whole screen */
     max-height: 73vh;
     height: auto;
-    margin-bottom: 2.3vw; /* Adds space between images */
+    margin-bottom: 3vw; /* Adds space between images */
 }
 
 /* Video styling */
 .container video {
     max-width: 50vw; /* Scale the images so they don't take up the whole screen */
     height: auto;
-    margin-bottom: 2.3vw; /* Adds space between video and other content */
+    margin-bottom: 3vw; /* Adds space between video and other content */
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
     .container img,
     .container video {
-        max-width: 97.7%; /* Sets width relative to the viewport on mobile */
+        max-width: 99.7%; /* Sets width relative to the viewport on mobile */
         max-height: none; /* Removes the height constraint on smaller screens */
     }
 }
         
 
 
-/* Nonsense Editable */
+/* Editable Text */
 
 .size-display120px {
     color: #ffffff;
     text-align: center;
-    margin-top: 6.2em;
-    margin-bottom: 0.1em;
+    margin-top: 8%;
+    margin-bottom: -0.7%;
 }
 
 .editable-text120px {
-    font-size: clamp(80px, 9vw, 400px); /* Responsive font size */
+    font-size: clamp(100px, 9vw, 400px); /* Responsive font size */
     outline: none;
     border: none;
     background: transparent;
     color: #ffffff;
     cursor: text;
     text-align: center;
-    padding-left: 1.2%;
-    padding-right: 1.2%;
+    padding-left: 1%;
+    padding-right: 1%;
     letter-spacing: 0.01em;
+    line-height: 1.2;
 }
 
 .size-display50px {
     color: #ffffff;
     text-align: center;
-    margin-top: 6.2em;
-    margin-bottom: 2em;
+    margin-top: 10%;
+    margin-bottom: 1.5%;
 }
 
 .editable-text50px {
-    font-size: clamp(30px, 3.45vw, 300px); /* Responsive font size */
+    font-size: clamp(45px, 3.45vw, 300px); /* Responsive font size */
     outline: none;
     border: none;
     background: transparent;
     color: #ffffff;
     cursor: text;
     text-align: center;
-    padding-left: 1.2%;
-    padding-right: 1.2%;
-    margin-bottom: 3em;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-bottom: 10%;
     word-spacing: 0.05em;
+    line-height: 1.2;
 }
 
 
-/* Branches Editable */
+
 
 
 

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="script.js"></script>
     <title>Index</title>
     <link rel="shortcut icon" href="Favicon/Favicon.png" type="image/x-icon">
     
@@ -15,7 +17,16 @@
 </head>
 
 <body>
-<h1>Hey! My name is Kilian and I am a graphic designer and artist based in Naarm/Melbourne. I acknowledge the care, relationship and sovereignty connecting Wurundjeri people to these lands and waters, where I am an uninvited guest. In my exploration of communication, I’m mostly silly but can sometimes be serious, reminding us of our collective belonging. With an interest in the extreme sides of the spectrum and the tension in between, each project becomes a canvas for exploration. For collaborations, get in touch <a href="mailto:kilianhoppner@gmail.com?subject=spicy%20collab!" class="hyperlink"><u>here</u></a>.</h1>
+
+    <h1>
+        Hey! My name is <span class="nonsense">Kilian</span> and I am a graphic designer and artist based in Naarm/Melbourne. 
+        In my exploration of communication, I’m mostly silly but can sometimes be serious, reminding us of our collective belonging. 
+        With an interest in the extreme sides of the spectrum and the tension in between, each project becomes a canvas for exploration. 
+        For collaborations, get in touch <a href="mailto:kilianhoppner@gmail.com?subject=spicy%20collab!" class="hyperlink"><u>here</u></a>. 
+        Or just call me baby <a href="tel:+61410378301" class="hyperlink">(+61) 4 10 37 83 01</a>.
+    </h1>
+    
+
 <br>
 <br>
 <br>
@@ -23,13 +34,13 @@
 <br>
 <h1>Selected Work</h1>   
 <br>
-<h1><a href="Nonsense.html" id="Nonsense">→ Nonsense</a></h1>
-<h1><a href="TheWeatherRoom.html" id="TheWeatherRoom">→ The Weather Room</a></h1>
-<h1><a href="Branches.html" id="Branches">→ Branches</a></h1>
-<h1><a href="NotTheBigIssue.html" id="NotTheBigIssue">→ The Big Issue</a></h1>
-<h1><a href="TakeItSlow.html" id="TakeItSlow">→ Take It Slow</a></h1>
-<h1><a href="FermeLesYeux.html" id="FermeLesYeux">→ Ferme Les Yeux</a></h1>
-<h1><a href="DaddyLovesYou.html" id="DaddyLovesYou">→ Daddy Loves You</a></h1>
+<h1><a href="Nonsense.html" id="Nonsense"> <i class="fa-solid fa-question"></i> Nonsense</a></h1>
+<h1><a href="TheWeatherRoom.html" id="TheWeatherRoom"><i class="fa-solid fa-umbrella"></i> The Weather Room</a></h1>
+<h1><a href="Branches.html" id="Branches"><i class="fa-solid fa-tree"></i> Branches</a></h1>
+<h1><a href="NotTheBigIssue.html" id="NotTheBigIssue"><i class="fa-solid fa-pen"></i> The Big Issue</a></h1>
+<h1><a href="TakeItSlow.html" id="TakeItSlow"><i class="fa-solid fa-baby-carriage"></i> Take It Slow</a></h1>
+<h1><a href="FermeLesYeux.html" id="FermeLesYeux"><i class="fa-solid fa-eye"></i> Ferme Les Yeux</a></h1>
+<h1><a href="DaddyLovesYou.html" id="DaddyLovesYou"><i class="fa-solid fa-heart"></i> Daddy Loves You</a></h1>
 
 
 <!-- Hidden images for each header -->
@@ -44,61 +55,78 @@
 
 
 <script>
-    // Function to show/hide hover images for specific headers
-    function handleHover(headerId, imageId) {
-        const header = document.getElementById(headerId);
-        const image = document.getElementById(imageId);
+// Function to calculate the middle of the viewport relative to the current scroll position
+function updateImagePosition(image) {
+    const viewportHeight = window.innerHeight;
+    const middle = viewportHeight / 2; // Vertical middle of the viewport
+    image.style.top = `${middle}px`;
+}
 
-        header.addEventListener('mouseenter', function() {
-            image.style.display = 'block';
-        });
+// Function to show/hide hover images for specific headers
+function handleHover(headerId, imageId) {
+    const header = document.getElementById(headerId);
+    const image = document.getElementById(imageId);
 
-        header.addEventListener('mouseleave', function() {
-            image.style.display = 'none';
-        });
-    }
+    header.addEventListener('mouseenter', function () {
+        updateImagePosition(image); // Update position when the image is shown
+        image.style.display = 'block';
+    });
 
-    // Check if the device width is greater than 768 pixels
-    if (window.innerWidth > 768) {
-        // Applying hover functionality to each header and its corresponding image
-        handleHover('TakeItSlow', 'hover-image-tis');
-        handleHover('Nonsense', 'hover-image-n');
-        handleHover('TheWeatherRoom', 'hover-image-twr');
-        handleHover('Branches', 'hover-image-b');
-        handleHover('NotTheBigIssue', 'hover-image-ntbi');
-        handleHover('FermeLesYeux', 'hover-image-fly');
-        handleHover('DaddyLovesYou', 'hover-image-dly');
-    } else {
-        // Ensure images are hidden if on mobile
-        document.querySelectorAll('img').forEach(function(image) {
-            image.style.display = 'none';
-        });
-    }
+    header.addEventListener('mouseleave', function () {
+        image.style.display = 'none';
+    });
+
+    // Update the position on scroll for better accuracy
+    window.addEventListener('scroll', function () {
+        if (image.style.display === 'block') {
+            updateImagePosition(image);
+        }
+    });
+}
+
+// Check if the device width is greater than 768 pixels
+if (window.innerWidth > 768) {
+    // Applying hover functionality to each header and its corresponding image
+    handleHover('TakeItSlow', 'hover-image-tis');
+    handleHover('Nonsense', 'hover-image-n');
+    handleHover('TheWeatherRoom', 'hover-image-twr');
+    handleHover('Branches', 'hover-image-b');
+    handleHover('NotTheBigIssue', 'hover-image-ntbi');
+    handleHover('FermeLesYeux', 'hover-image-fly');
+    handleHover('DaddyLovesYou', 'hover-image-dly');
+} else {
+    // Ensure images are hidden if on mobile
+    document.querySelectorAll('img').forEach(function (image) {
+        image.style.display = 'none';
+    });
+}
+
 </script>
 
 <style>
-    h1 a:hover {
-        color: red; /* Text colour when hovered over within h1 headers */
-    }
 
-    /* General styling for hover images */
-    #hover-image-tis,
-    #hover-image-n,
-    #hover-image-twr,
-    #hover-image-b,
-    #hover-image-ntbi,
-    #hover-image-fly,
-    #hover-image-dly {
-        display: none;
-        position: absolute;
-        max-width: 37vw; /* Scale the images so they don't take up the whole screen */
-        max-height: 55vh;
-        object-fit: contain;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+
+/* Hover effect for both icon and text */
+h1 a:hover i,
+h1 a:hover {
+    color: yellow; /* Change both text and icon color to yellow */
+}
+/* General styling for hover images */
+#hover-image-tis,
+#hover-image-n,
+#hover-image-twr,
+#hover-image-b,
+#hover-image-ntbi,
+#hover-image-fly,
+#hover-image-dly {
+    display: none; /* Hidden by default */
+    position: fixed; /* Use fixed to position relative to the viewport */
+    max-width: 42vw; /* Limit the width of the images */
+    max-height: 65vh; /* Limit the height of the images */
+    object-fit: contain; /* Ensure the image maintains its aspect ratio */
+    left: 50%; /* Horizontal centring */
+    transform: translate(-50%, -50%); /* Centre both horizontally and vertically */
+    top: 50%; /* Default vertical centring for fixed positioning */
+}
 </style>
 
-</body>
-</html>
