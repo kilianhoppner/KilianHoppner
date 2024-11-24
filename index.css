@@ -11,6 +11,8 @@
 body {
 background: linear-gradient(to bottom, rgb(255, 29, 184), rgb(68, 15, 226), rgb(15, 226, 54)); /* Static vertical gradient from black to blue */
 margin: 1%;
+min-height: 100vh; 
+
 }
 
 @font-face { 
