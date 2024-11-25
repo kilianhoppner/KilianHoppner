@@ -190,7 +190,7 @@ i {
 }
 
 .editable-text120px {
-    font-size: clamp(100px, 9vw, 400px); /* Responsive font size */
+    font-size: clamp(80px, 9vw, 400px); /* Responsive font size */
     outline: none;
     border: none;
     background: transparent;
@@ -211,7 +211,7 @@ i {
 }
 
 .editable-text50px {
-    font-size: clamp(45px, 3.45vw, 300px); /* Responsive font size */
+    font-size: clamp(30px, 3.45vw, 300px); /* Responsive font size */
     outline: none;
     border: none;
     background: transparent;
