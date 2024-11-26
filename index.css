@@ -130,6 +130,7 @@ i {
     font-size: clamp(1.8em, 3.6vw, 20em); /* Responsive font size */
 }
 
+
 .back-button:hover {
     /* color: red;  */
     /* border-color: red;  */
@@ -156,15 +157,15 @@ i {
 
 /* Image styling */
 .container img {
-    max-width: 50vw; /* Scale the images so they don't take up the whole screen */
-    max-height: 73vh;
+    max-width: 53vw; /* Scale the images so they don't take up the whole screen */
+    max-height: 76vh;
     height: auto;
     margin-bottom: 3vw; /* Adds space between images */
 }
 
 /* Video styling */
 .container video {
-    max-width: 50vw; /* Scale the images so they don't take up the whole screen */
+    max-width: 53vw; /* Scale the images so they don't take up the whole screen */
     height: auto;
     margin-bottom: 3vw; /* Adds space between video and other content */
 }

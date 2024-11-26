@@ -23,7 +23,7 @@
         In my exploration of communication, I’m mostly silly but can sometimes be serious, reminding us of our collective belonging. 
         With an interest in the extreme sides of the spectrum and the tension in between, each project becomes a canvas for exploration. 
         For collaborations, get in touch <a href="mailto:kilianhoppner@gmail.com?subject=spicy%20collab!" class="hyperlink"><u>here</u></a>. 
-        Or just call me baby <a href="tel:+61410378301" class="hyperlink">(+61) 4 10 37 83 01</a>.
+        Or just call me baby <a href="tel:+61410378301" class="hyperlink">(+61) 410 378 301</a>.
     </h1>
     
 
@@ -35,6 +35,7 @@
 <h1>Selected Work</h1>   
 <br>
 <h1><a href="Nonsense.html" id="Nonsense"> <i class="fa-solid fa-question"></i> Nonsense</a></h1>
+<h1><a href="Surveillancecorept1.html" id="Surveillancecorept1"> <i class="fa-solid fa-arrow-pointer"></i> Surveillancecore pt.1</a></h1>
 <h1><a href="TheWeatherRoom.html" id="TheWeatherRoom"><i class="fa-solid fa-umbrella"></i> The Weather Room</a></h1>
 <h1><a href="Branches.html" id="Branches"><i class="fa-solid fa-tree"></i> Branches</a></h1>
 <h1><a href="NotTheBigIssue.html" id="NotTheBigIssue"><i class="fa-solid fa-pen"></i> The Big Issue</a></h1>
@@ -44,6 +45,7 @@
 
 
 <!-- Hidden images for each header -->
+<img id="hover-image-spt1" src="Surveillancecorept1/3.png" alt="Surveillancecore pt.1"/>
 <img id="hover-image-tis" src="TakeItSlow/4.png" alt="Take It Slow"/>
 <img id="hover-image-n" src="Nonsense/Nonsense3.png" alt="Nonsense"/>
 <img id="hover-image-twr" src="TheWeatherRoom/2.png" alt="The Weather Room"/>
@@ -55,6 +57,7 @@
 
 
 <script>
+    
 // Function to calculate the middle of the viewport relative to the current scroll position
 function updateImagePosition(image) {
     const viewportHeight = window.innerHeight;
@@ -87,6 +90,7 @@ function handleHover(headerId, imageId) {
 // Check if the device width is greater than 768 pixels
 if (window.innerWidth > 768) {
     // Applying hover functionality to each header and its corresponding image
+    handleHover('Surveillancecorept1', 'hover-image-spt1');
     handleHover('TakeItSlow', 'hover-image-tis');
     handleHover('Nonsense', 'hover-image-n');
     handleHover('TheWeatherRoom', 'hover-image-twr');
@@ -112,6 +116,7 @@ h1 a:hover {
     color: yellow; /* Change both text and icon color to yellow */
 }
 /* General styling for hover images */
+#hover-image-spt1,
 #hover-image-tis,
 #hover-image-n,
 #hover-image-twr,
