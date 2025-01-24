@@ -68,7 +68,7 @@ body {
 
 
 h3 {
-    font-size: clamp(1.8em, 4.7vw, 20em); /* Responsive font size */
+    font-size: clamp(2.4em, 4.7vw, 20em); /* Responsive font size */
     color: transparent; /* Makes the fill transparent */
     -webkit-text-stroke: 0.03em white; /* Sets the outline thickness and color */
     background-color: transparent;
