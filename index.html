@@ -18,30 +18,39 @@
 
 <body>
 
+    <!-- 'About' -->
+    <h3>About</h3>
+
+    <br>
+
     <h1>
-        Hey! My name is <span class="nonsense">Kilian</span> and I am a graphic designer and artist based in Munich, Germany. 
-        In my exploration of communication, I’m mostly silly but can sometimes be serious, reminding us of our collective belonging. 
+        Kilian is a graphic designer and artist based in Munich, Germany. 
+        In his exploration of communication, he's mostly silly but can sometimes be serious, reminding us of our collective belonging. 
         With an interest in the extreme sides of the spectrum and the tension in between, each project becomes a canvas for exploration. 
-        For collaborations, get in touch <a href="mailto:kilianhoppner@gmail.com?subject=spicy%20collab!" class="hyperlink"><u>here</u></a>. 
-        Or just call me baby <a href="tel:+61410378301" class="hyperlink">(+61) 410 378 301</a>.
+        For collaborations, get in touch <a href="mailto:kilianhoppner@gmail.com?subject=let's%20collaborate!" class="hyperlink"><u>here</u></a>. 
+        Or just pick up your phone baby <a href="tel:+61410378301" class="hyperlink">(+61) 410 378 301</a>.
     </h1>
-    
 
 <br>
 <br>
+
+    <!-- "Selected Work" -->
+    <h3>Selected Work</h3>
+    <br>
+
+    <div>
+        <h1><a href="Nonsense.html" id="Nonsense"> <i class="fa-regular fa-star"></i> Nonsense</a></h1>
+        <h1><a href="Surveillancecorept1.html" id="Surveillancecorept1"> <i class="fa-regular fa-star"></i> Surveillancecore pt.1</a></h1>
+        <h1><a href="TheWeatherRoom.html" id="TheWeatherRoom"><i class="fa-regular fa-star"></i> The Weather Room</a></h1>
+        <h1><a href="Branches.html" id="Branches"><i class="fa-regular fa-star"></i> Branches</a></h1>
+        <h1><a href="NotTheBigIssue.html" id="NotTheBigIssue"><i class="fa-regular fa-star"></i> The Big Issue</a></h1>
+        <h1><a href="TakeItSlow.html" id="TakeItSlow"><i class="fa-regular fa-star"></i> Take It Slow</a></h1>
+        <h1><a href="FermeLesYeux.html" id="FermeLesYeux"><i class="fa-regular fa-star"></i> Ferme Les Yeux</a></h1>
+        <h1><a href="DaddyLovesYou.html" id="DaddyLovesYou"><i class="fa-regular fa-star"></i> Daddy Loves You</a></h1>
+    </div>
+
 <br>
 <br>
-<br>
-<h1>Selected Work</h1>   
-<br>
-<h1><a href="Nonsense.html" id="Nonsense"> <i class="fa-solid fa-question"></i> Nonsense</a></h1>
-<h1><a href="Surveillancecorept1.html" id="Surveillancecorept1"> <i class="fa-solid fa-arrow-pointer"></i> Surveillancecore pt.1</a></h1>
-<h1><a href="TheWeatherRoom.html" id="TheWeatherRoom"><i class="fa-solid fa-umbrella"></i> The Weather Room</a></h1>
-<h1><a href="Branches.html" id="Branches"><i class="fa-solid fa-tree"></i> Branches</a></h1>
-<h1><a href="NotTheBigIssue.html" id="NotTheBigIssue"><i class="fa-solid fa-pen"></i> The Big Issue</a></h1>
-<h1><a href="TakeItSlow.html" id="TakeItSlow"><i class="fa-solid fa-baby-carriage"></i> Take It Slow</a></h1>
-<h1><a href="FermeLesYeux.html" id="FermeLesYeux"><i class="fa-solid fa-eye"></i> Ferme Les Yeux</a></h1>
-<h1><a href="DaddyLovesYou.html" id="DaddyLovesYou"><i class="fa-solid fa-heart"></i> Daddy Loves You</a></h1>
 
 
 <!-- Hidden images for each header -->
@@ -56,56 +65,6 @@
 
 
 
-<script>
-    
-// Function to calculate the middle of the viewport relative to the current scroll position
-function updateImagePosition(image) {
-    const viewportHeight = window.innerHeight;
-    const middle = viewportHeight / 2; // Vertical middle of the viewport
-    image.style.top = `${middle}px`;
-}
-
-// Function to show/hide hover images for specific headers
-function handleHover(headerId, imageId) {
-    const header = document.getElementById(headerId);
-    const image = document.getElementById(imageId);
-
-    header.addEventListener('mouseenter', function () {
-        updateImagePosition(image); // Update position when the image is shown
-        image.style.display = 'block';
-    });
-
-    header.addEventListener('mouseleave', function () {
-        image.style.display = 'none';
-    });
-
-    // Update the position on scroll for better accuracy
-    window.addEventListener('scroll', function () {
-        if (image.style.display === 'block') {
-            updateImagePosition(image);
-        }
-    });
-}
-
-// Check if the device width is greater than 768 pixels
-if (window.innerWidth > 768) {
-    // Applying hover functionality to each header and its corresponding image
-    handleHover('Surveillancecorept1', 'hover-image-spt1');
-    handleHover('TakeItSlow', 'hover-image-tis');
-    handleHover('Nonsense', 'hover-image-n');
-    handleHover('TheWeatherRoom', 'hover-image-twr');
-    handleHover('Branches', 'hover-image-b');
-    handleHover('NotTheBigIssue', 'hover-image-ntbi');
-    handleHover('FermeLesYeux', 'hover-image-fly');
-    handleHover('DaddyLovesYou', 'hover-image-dly');
-} else {
-    // Ensure images are hidden if on mobile
-    document.querySelectorAll('img').forEach(function (image) {
-        image.style.display = 'none';
-    });
-}
-
-</script>
 
 <style>
 
@@ -133,5 +92,67 @@ h1 a:hover {
     transform: translate(-50%, -50%); /* Centre both horizontally and vertically */
     top: 50%; /* Default vertical centring for fixed positioning */
 }
+
+
 </style>
+
+
+
+
+
+
+<script>
+    
+    // Function to calculate the middle of the viewport relative to the current scroll position
+    function updateImagePosition(image) {
+        const viewportHeight = window.innerHeight;
+        const middle = viewportHeight / 2; // Vertical middle of the viewport
+        image.style.top = `${middle}px`;
+    }
+    
+    // Function to show/hide hover images for specific headers
+    function handleHover(headerId, imageId) {
+        const header = document.getElementById(headerId);
+        const image = document.getElementById(imageId);
+    
+        header.addEventListener('mouseenter', function () {
+            updateImagePosition(image); // Update position when the image is shown
+            image.style.display = 'block';
+        });
+    
+        header.addEventListener('mouseleave', function () {
+            image.style.display = 'none';
+        });
+    
+        // Update the position on scroll for better accuracy
+        window.addEventListener('scroll', function () {
+            if (image.style.display === 'block') {
+                updateImagePosition(image);
+            }
+        });
+    }
+    
+    // Check if the device width is greater than 768 pixels
+    if (window.innerWidth > 768) {
+        // Applying hover functionality to each header and its corresponding image
+        handleHover('Surveillancecorept1', 'hover-image-spt1');
+        handleHover('TakeItSlow', 'hover-image-tis');
+        handleHover('Nonsense', 'hover-image-n');
+        handleHover('TheWeatherRoom', 'hover-image-twr');
+        handleHover('Branches', 'hover-image-b');
+        handleHover('NotTheBigIssue', 'hover-image-ntbi');
+        handleHover('FermeLesYeux', 'hover-image-fly');
+        handleHover('DaddyLovesYou', 'hover-image-dly');
+    } else {
+        
+        // Ensure images are hidden if on mobile
+        document.querySelectorAll('img').forEach(function (image) {
+            image.style.display = 'none';
+        });
+    }
+    
+    </script>
+
+
+</body>
 

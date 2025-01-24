@@ -57,13 +57,28 @@ body {
 } 
 
 
+@font-face { 
+    font-family: 'Chancery'; 
+    src: url(Typeface/AppleChancery.ttf);
+} 
 
 .hover-text:hover {
     color: yellow; /* Color on hover */
 }
 
+
+h3 {
+    font-size: clamp(1.8em, 4.7vw, 20em); /* Responsive font size */
+    color: transparent; /* Makes the fill transparent */
+    -webkit-text-stroke: 0.03em white; /* Sets the outline thickness and color */
+    background-color: transparent;
+    font-weight: normal;
+    line-height: 1.5;
+    font-family: chancery;
+}
+
 h1 {
-    font-size: clamp(1.8em, 3.6vw, 20em); /* Responsive font size */
+    font-size: clamp(1.8em, 3.4vw, 20em); /* Responsive font size */
     color: white;
     background-color: transparent;
     font-weight: normal;
@@ -110,8 +125,8 @@ a {
 
 i {
     color: rgb(255, 255, 255); /* Default color for icons */
-    vertical-align: -0.03em; /* Adjusts the icon to move slightly up from the middle line */
-    font-size: 0.78em; /* Set the icon size to 90% of the h1 font size */
+    vertical-align: -0.01em; /* Adjusts the icon to move slightly up from the middle line */
+    font-size: 0.8em; /* Set the icon size to 90% of the h1 font size */
 }
 
 /* Index Back Button */
