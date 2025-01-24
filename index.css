@@ -132,17 +132,17 @@ i {
 /* Index Back Button */
 
 .back-button {
-    border: 0.05em solid rgb(255, 255, 255); /* White border */
+    border: 0.013em solid rgb(0, 0, 0); /* White border */
     border-radius: 10em; /* Circular edges */
     padding: 0.25em; /* Padding for spacing */
-    background: linear-gradient(135deg, #e7e4e4, #ab9d9d, #d0cdcd);
-    color: rgb(255, 255, 255); /* White text color */
+    background: yellow;
+    color: rgb(0, 0, 0); /* White text color */
     position: fixed; /* Keeps the button in the same position relative to the viewport */
     top: 1%; /* Distance from the top of the viewport */
     right: 1%; /* Distance from the right of the viewport */
     text-align: center; /* Centres the text */
     line-height: 1; /* Ensures proper alignment */
-    box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.6), inset 0 0 5px rgba(255, 255, 255, 0.4); /* Soft outer shadow and inner shine */
+    box-shadow: 6px 6px 20px rgba(255, 255, 0, 0.8); /* Soft outer shadow and inner shine */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transition on hover */
     font-size: clamp(1.8em, 3.6vw, 20em); /* Responsive font size */
 }
@@ -151,14 +151,10 @@ i {
 .back-button:hover {
     /* color: red;  */
     /* border-color: red;  */
-    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.6); /* Enhanced shadow and stronger inner shine on hover */
+    box-shadow: 8px 8px 20px rgba(255, 255, 0, 1.2); /* Enhanced shadow and stronger inner shine on hover */
     transform: translateY(-4px); /* Button appears to lift slightly on hover */
-    background: linear-gradient(135deg, #e7e4e4, #ab9d9d, #d0cdcd);
+    background: yellow;
 }
-
-
-
-
 
 
 
