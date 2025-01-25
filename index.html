@@ -30,7 +30,7 @@
         In his exploration of communication, he's mostly silly but can sometimes be serious, reminding us of our collective belonging. 
         With an interest in the extreme sides of the spectrum and the tension in between, each project becomes a canvas for exploration. 
         For collaborations, get in touch <a href="mailto:kilianhoppner@gmail.com?subject=let's%20collaborate!" class="hyperlink"><u>here</u></a>. 
-        Or just pick up your phone baby <a href="tel:+61410378301" class="hyperlink">(+61) 410 378 301</a>.
+        Or call me baby <a href="tel:+61410378301" class="hyperlink">(+61) 410 378 301</a>.
     </h1>
 
     <br>
@@ -162,19 +162,22 @@ h1 a:hover {
         });
     }
     
+
+
+
 // Parametric Floating Figure
 
 // Scene Setup
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(20, 20, 220);
+camera.position.set(0, 38, 222);
 
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit the pixel ratio to 2
 renderer.domElement.style.background = 'none';
 renderer.domElement.style.position = 'absolute';
-renderer.domElement.style.top = '35vh';
+renderer.domElement.style.top = '24vh';
 renderer.domElement.style.left = '50vw';
 renderer.domElement.style.transform = 'translateX(-50%)';
 renderer.domElement.style.pointerEvents = 'none'; // Disable interaction with the canvas
@@ -195,7 +198,7 @@ loader.load(
     function (gltf) {
         const parametricFigure = gltf.scene;
         scene.add(parametricFigure);
-        parametricFigure.scale.set(0.1, 0.1, 0.1);
+        parametricFigure.scale.set(0.11, 0.11, 0.11);
         parametricFigure.position.set(0, 0, 0);
 
         parametricFigure.traverse((child) => {
@@ -206,8 +209,8 @@ loader.load(
 
         // Mobile optimization
         const isMobile = window.innerWidth <= 768;
-        let oscillationSpeed = isMobile ? 0.0005 : 0.001;
-        let oscillationAmplitude = isMobile ? 5 : 10;
+        let oscillationSpeed = isMobile ? 0.0005 : 0.0005;
+        let oscillationAmplitude = isMobile ? 13 : 13;
 
         function animate() {
             if (document.hidden) return; // Skip rendering when the tab is not visible
@@ -215,7 +218,7 @@ loader.load(
             requestAnimationFrame(animate);
 
             parametricFigure.position.y = Math.sin(Date.now() * oscillationSpeed) * oscillationAmplitude;
-            parametricFigure.rotation.y += 0.01;
+            parametricFigure.rotation.y += 0.007;
 
             renderer.render(scene, camera);
         }
