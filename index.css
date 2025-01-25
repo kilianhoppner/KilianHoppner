@@ -126,7 +126,7 @@ a {
 
 i {
     color: rgb(255, 255, 255); /* Default color for icons */
-    vertical-align: -0.01em; /* Adjusts the icon to move slightly up from the middle line */
+    vertical-align: 0.1em; /* Adjusts the icon to move slightly up from the middle line */
     font-size: 0.8em; /* Set the icon size to 90% of the h1 font size */
 }
 
