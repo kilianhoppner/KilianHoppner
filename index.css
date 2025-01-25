@@ -2,20 +2,21 @@
     margin: 0;
     padding: 0;
     border: none;
-    overflow-x: hidden;
     /* cursor: pointer; */
     font-family: 'AS60';
     cursor: url('Cursor/CursorHand.png'), auto;
 }
 
 body {
-    background: linear-gradient(to bottom, rgb(255, 29, 184), rgb(68, 15, 226), rgb(15, 226, 54)); /* Static vertical gradient from black to blue */
+    background: linear-gradient(to bottom, rgb(255, 29, 184), rgb(68, 15, 226), rgb(15, 226, 54)); /* Gradient from pink to blue to green */
     margin-top: 1%;
     margin-right: 1%;
     margin-left: 1%;
-    min-height: 100vh; 
-
+    height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    overflow-x: hidden;
+    background-attachment: fixed; /* Optional: This keeps the gradient fixed when scrolling */
 }
+
 
 @font-face { 
     font-family: 'AS60'; 
