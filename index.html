@@ -174,9 +174,7 @@ camera.position.set(0, 38, 220);
 
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-
-// Adjust pixel ratio for mobile devices to reduce lag
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Limiting to a lower pixel ratio for mobile
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit the pixel ratio to 2
 renderer.domElement.style.background = 'none';
 renderer.domElement.style.position = 'absolute';
 renderer.domElement.style.top = '25.5vh';
@@ -211,31 +209,20 @@ loader.load(
 
         // Mobile optimization
         const isMobile = window.innerWidth <= 768;
+        let oscillationSpeed = isMobile ? 0.0005 : 0.0005;
+        let oscillationAmplitude = isMobile ? 13 : 13;
 
-        let oscillationSpeed = isMobile ? 0.0005 : 0.0005;  // Keep speed same for mobile and desktop, you can tweak it here
-        let oscillationAmplitude = isMobile ? 13 : 13; // Amplitude adjustment for mobile devices (can further decrease if needed)
-
-        let lastTime = 0; // Variable to store last frame time for optimizing frame rate
-
-        function animate(time) {
+        function animate() {
             if (document.hidden) return; // Skip rendering when the tab is not visible
-
-            // If running on mobile, limit the frame rate to avoid lag
-            if (isMobile) {
-                const deltaTime = time - lastTime;
-                if (deltaTime < 16) return; // Cap the frame rate to ~60 FPS (1000ms / 60)
-            }
-
-            lastTime = time;
 
             requestAnimationFrame(animate);
 
-            parametricFigure.position.y = Math.sin(time * oscillationSpeed) * oscillationAmplitude;
+            parametricFigure.position.y = Math.sin(Date.now() * oscillationSpeed) * oscillationAmplitude;
             parametricFigure.rotation.y += 0.007;
 
             renderer.render(scene, camera);
         }
-        animate(0); // Start the animation loop
+        animate();
     },
     undefined,
     function (error) {
