@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
     <title>Index</title>
     <link rel="shortcut icon" href="Favicon/Favicon.png" type="image/x-icon">
     
@@ -65,7 +67,13 @@
 <img id="hover-image-dly" src="DaddyLovesYou/2.png" alt="Daddy Loves You"/>
 
 
+<!-- Strawberry -->
 
+<div id="strawberry-container"></div>
+
+
+
+<!-- Styling -->
 
 <style>
 
@@ -75,6 +83,8 @@ h1 a:hover i,
 h1 a:hover {
     color: yellow; /* Change both text and icon color to yellow */
 }
+
+
 /* General styling for hover images */
 #hover-image-spt1,
 #hover-image-tis,
@@ -100,7 +110,7 @@ h1 a:hover {
 
 
 
-
+<!-- Javascript -->
 
 <script>
     
@@ -152,6 +162,84 @@ h1 a:hover {
         });
     }
     
+// Parametric Floating Figure
+
+// Scene Setup
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); // Dynamic aspect ratio
+camera.position.set(20, 20, 220); // Move the camera farther back to fit the whole model
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight); // Canvas fills the entire window
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.domElement.style.background = 'none';
+renderer.domElement.style.position = 'absolute'; // Position the canvas absolutely
+renderer.domElement.style.top = '35vh'; // Move canvas slightly higher than the center
+renderer.domElement.style.left = '50vw'; // Center horizontally
+renderer.domElement.style.transform = 'translateX(-50%)'; // Center horizontally with offset
+renderer.domElement.style.pointerEvents = 'none'; // Disable interaction with the canvas
+renderer.domElement.style.zIndex = '100'; // Ensure it appears above other content
+document.body.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+directionalLight.position.set(2, 2, 2);
+scene.add(directionalLight);
+
+// Load the 3D Parametric Figure Model
+const loader = new THREE.GLTFLoader();
+loader.load(
+    './models/parametricfigure.glb', // Path to your GLB file for the parametric figure
+    function (gltf) {
+        const parametricFigure = gltf.scene; // Get the loaded model
+        scene.add(parametricFigure);
+
+        // Scale the model to fit it into the camera's view
+        parametricFigure.scale.set(0.1, 0.1, 0.1); // Scale down the model to fit within the camera view
+        parametricFigure.position.set(0, 0, 0); // Position it at the center of the scene
+
+        // Change color to yellow
+        parametricFigure.traverse((child) => {
+            if (child.isMesh) {
+                child.material = new THREE.MeshStandardMaterial({ color: 0xFFFF00 }); // Set yellow color
+            }
+        });
+
+        // Animate rotation and oscillation
+        let oscillationSpeed = 0.001; // Slower oscillation speed
+        let oscillationAmplitude = 10; // Increase the amplitude for further movement
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Oscillation effect (smoother and slower)
+            parametricFigure.position.y = Math.sin(Date.now() * oscillationSpeed) * oscillationAmplitude;
+
+            // Rotation effect
+            parametricFigure.rotation.y += 0.01; // Continuous rotation around the Y-axis
+
+            renderer.render(scene, camera);
+        }
+        animate();
+    },
+    undefined,
+    function (error) {
+        console.error('Error loading the model:', error);
+    }
+);
+
+// Adjust on Window Resize
+window.addEventListener('resize', () => {
+    // Update camera aspect ratio to match window size
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight); // Adjust renderer to fill the window
+});
+
+
     </script>
 
 
