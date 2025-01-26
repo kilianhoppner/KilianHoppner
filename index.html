@@ -379,6 +379,7 @@ if (!sessionStorage.getItem('modelLoaded')) {
 
 
 
+
 // Pop Up Window 
 
 // Check if the popup has already been shown using localStorage
@@ -389,16 +390,16 @@ if (!localStorage.getItem('popupShown') && !localStorage.getItem('indexButtonPre
         setTimeout(function() {
             document.getElementById('agePopup').style.display = 'flex'; // Show the popup
             localStorage.setItem('popupShown', 'true');  // Set the flag in localStorage to prevent future popups
-        }, 2000); // 2000ms = 2 seconds delay
+        }, 600); // 600ms = 0.6 seconds delay
     };
 } else if (!sessionStorage.getItem('popupSessionShown') && !localStorage.getItem('indexButtonPressed')) {
     // If localStorage flag exists but sessionStorage flag is not set, this is a fresh tab/window
     window.onload = function () {
-        // Delay the popup appearance (e.g., 2 seconds after the page loads)
+        // Delay the popup appearance (e.g., 0.6 seconds after the page loads)
         setTimeout(function() {
             document.getElementById('agePopup').style.display = 'flex'; // Show the popup
             sessionStorage.setItem('popupSessionShown', 'true'); // Prevent the popup in the same session
-        }, 700); // 2000ms = 2 seconds delay
+        }, 600); // 600ms = 0.6 seconds delay
     };
 } else {
     // Hide the popup if the flag is already set or if the index button was pressed
@@ -410,6 +411,12 @@ function closePopup() {
     document.getElementById('agePopup').style.display = 'none';
     document.body.style.overflow = 'auto'; // Allow scrolling again
 }
+
+// Redirect to index.html when the "enter" button is clicked
+document.querySelector('.popup .enter').addEventListener('click', function () {
+    closePopup(); // Close the popup
+    window.location.href = 'index.html'; // Redirect to index.html
+});
 
 // Redirect to another site
 function exitSite() {
