@@ -366,7 +366,7 @@ window.addEventListener('resize', () => {
 
 
 
-// Pop Up Window 
+// Pop Up Window
 
 // Check if the popup has already been shown using localStorage
 if (!localStorage.getItem('popupShown')) {
@@ -391,9 +391,11 @@ if (!localStorage.getItem('popupShown')) {
     document.getElementById('agePopup').style.display = 'none';
 }
 
-// Prevent the pop-up from showing when the back button is pressed
+// Prevent the pop-up from showing when the "index" button is pressed
 document.querySelector('.back-button').addEventListener('click', function () {
     sessionStorage.setItem('popupBlocked', 'true'); // Set flag to prevent popup on navigation back
+    // Ensure the popup is hidden when the "index" button is clicked
+    document.getElementById('agePopup').style.display = 'none';
 });
 
 // Close the popup
