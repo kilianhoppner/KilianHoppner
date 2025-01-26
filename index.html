@@ -372,14 +372,19 @@ window.addEventListener('resize', () => {
 if (!localStorage.getItem('popupShown')) {
     // Show the popup on the first visit (new tab/window)
     window.onload = function () {
-        document.getElementById('agePopup').style.display = 'flex';
-        localStorage.setItem('popupShown', 'true');  // Set the flag in localStorage to prevent future popups
+        // Check if the pop-up should be shown (not navigating back to index)
+        if (!sessionStorage.getItem('popupBlocked')) {
+            document.getElementById('agePopup').style.display = 'flex';
+            localStorage.setItem('popupShown', 'true');  // Set the flag in localStorage to prevent future popups
+        }
     };
 } else if (!sessionStorage.getItem('popupSessionShown')) {
     // If localStorage flag exists but sessionStorage flag is not set, this is a fresh tab/window
     window.onload = function () {
-        document.getElementById('agePopup').style.display = 'flex';
-        sessionStorage.setItem('popupSessionShown', 'true'); // Prevent the popup in the same session
+        if (!sessionStorage.getItem('popupBlocked')) {
+            document.getElementById('agePopup').style.display = 'flex';
+            sessionStorage.setItem('popupSessionShown', 'true'); // Prevent the popup in the same session
+        }
     };
 } else {
     // Hide the popup if the flag is already set
@@ -387,10 +392,8 @@ if (!localStorage.getItem('popupShown')) {
 }
 
 // Prevent the pop-up from showing when the back button is pressed
-document.querySelector('.back-button').addEventListener('click', function (event) {
-    // Prevent the pop-up from appearing when the back button is clicked
-    sessionStorage.setItem('popupSessionShown', 'true'); // Prevent pop-up in the current session
-    document.getElementById('agePopup').style.display = 'none'; // Hide the pop-up
+document.querySelector('.back-button').addEventListener('click', function () {
+    sessionStorage.setItem('popupBlocked', 'true'); // Set flag to prevent popup on navigation back
 });
 
 // Close the popup
@@ -403,6 +406,7 @@ function closePopup() {
 function exitSite() {
     window.location.href = 'https://www.google.com';
 }
+
 
 
     </script>
