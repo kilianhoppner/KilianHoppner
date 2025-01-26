@@ -365,42 +365,26 @@ window.addEventListener('resize', () => {
 
 
 
-// Pop Up Window
+
+// Pop Up Window 
 
 // Check if the popup has already been shown using localStorage
 if (!localStorage.getItem('popupShown')) {
     // Show the popup on the first visit (new tab/window)
     window.onload = function () {
-        // Only show the popup if it hasn't been blocked
-        if (!sessionStorage.getItem('popupBlocked')) {
-            document.getElementById('agePopup').style.display = 'flex';
-            localStorage.setItem('popupShown', 'true');  // Set the flag in localStorage to prevent future popups
-        }
+        document.getElementById('agePopup').style.display = 'flex';
+        localStorage.setItem('popupShown', 'true');  // Set the flag in localStorage to prevent future popups
     };
 } else if (!sessionStorage.getItem('popupSessionShown')) {
     // If localStorage flag exists but sessionStorage flag is not set, this is a fresh tab/window
     window.onload = function () {
-        if (!sessionStorage.getItem('popupBlocked')) {
-            document.getElementById('agePopup').style.display = 'flex';
-            sessionStorage.setItem('popupSessionShown', 'true'); // Prevent the popup in the same session
-        }
+        document.getElementById('agePopup').style.display = 'flex';
+        sessionStorage.setItem('popupSessionShown', 'true'); // Prevent the popup in the same session
     };
 } else {
     // Hide the popup if the flag is already set
     document.getElementById('agePopup').style.display = 'none';
 }
-
-// Prevent the pop-up from showing when the "index" button is pressed
-document.querySelector('.back-button').addEventListener('click', function (event) {
-    // Set a flag to block the popup when navigating to index.html
-    sessionStorage.setItem('popupBlocked', 'true'); // Set flag to prevent popup on navigation back
-    
-    // Wait for the page navigation to happen before hiding the popup
-    setTimeout(function() {
-        // Hide the popup just in case it's showing when clicking the back button
-        document.getElementById('agePopup').style.display = 'none';
-    }, 10); // Small timeout to ensure flag is set before page navigation
-});
 
 // Close the popup
 function closePopup() {
@@ -412,6 +396,7 @@ function closePopup() {
 function exitSite() {
     window.location.href = 'https://www.google.com';
 }
+
 
 
     </script>
