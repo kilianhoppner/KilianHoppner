@@ -281,8 +281,11 @@ h1 a:hover {
     }
     
 
-    // Parametric Figure
 
+
+    
+
+// Parametric Figure
 
 // Scene Setup
 const scene = new THREE.Scene();
@@ -364,6 +367,13 @@ window.addEventListener('resize', () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
     }, 200);
 });
+
+// Ensure page refresh and model loads on first open
+if (!sessionStorage.getItem('modelLoaded')) {
+    sessionStorage.setItem('modelLoaded', 'true');
+    window.location.reload();
+}
+
 
 
 
