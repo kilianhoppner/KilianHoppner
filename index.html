@@ -179,18 +179,18 @@ h1 a:hover {
 // Scene Setup
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 38, 220);
+camera.position.set(0, 50, 220);
 
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit the pixel ratio to 2
 renderer.domElement.style.background = 'none';
 renderer.domElement.style.position = 'absolute';
-renderer.domElement.style.top = '25.5vh';
+renderer.domElement.style.top = '24vh';
 renderer.domElement.style.left = '50vw';
 renderer.domElement.style.transform = 'translateX(-50%)';
 renderer.domElement.style.pointerEvents = 'none'; // Disable interaction with the canvas
-renderer.domElement.style.zIndex = '100';
+renderer.domElement.style.zIndex = '1000';
 document.body.appendChild(renderer.domElement);
 
 // Lighting
@@ -207,7 +207,7 @@ loader.load(
     function (gltf) {
         const parametricFigure = gltf.scene;
         scene.add(parametricFigure);
-        parametricFigure.scale.set(0.11, 0.11, 0.11);
+        parametricFigure.scale.set(0.115, 0.115, 0.115);
         parametricFigure.position.set(0, 0, 0);
 
         parametricFigure.traverse((child) => {
@@ -251,6 +251,8 @@ window.addEventListener('resize', () => {
 });
 
     </script>
+
+    
 
 
 </body>
