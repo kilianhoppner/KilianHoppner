@@ -14,6 +14,14 @@
     
         <!-- Meta description for better search results -->
         <meta name="Kilian Höppner" content="Art & design portfolio.">
+
+        <!-- Directing user to /html  -->
+        <script>
+            if (window.location.hostname === "kilianhoppner.com" && window.location.pathname === "/") {
+                window.location.replace("https://kilianhoppner.com/index.html");
+            }
+        </script>
+        
     </head>
     
 </head>
@@ -396,15 +404,6 @@ function closePopup() {
 function exitSite() {
     window.location.href = 'https://www.google.com';
 }
-
-
-
-
-// Directing user to /html
-
-    if (window.location.hostname === "kilianhoppner.com" && window.location.pathname === "/") {
-        window.location.replace("https://kilianhoppner.com/index.html");
-    }
 
 
 
