@@ -67,6 +67,30 @@
 <img id="hover-image-dly" src="DaddyLovesYou/2.png" alt="Daddy Loves You"/>
 
 
+<!-- Pop Up Window -->
+
+<div class="popup" id="agePopup">
+    <div class="popup-content">
+        <h1 style="font-family: Arial, sans-serif;">This is an adult website</h1>
+        <p style="font-family: Arial, sans-serif;">
+            
+This website contains age-restricted materials, including nudity and depictions of extreme silliness. By entering, you affirm that you are at least 18 years old or the age of majority in the jurisdiction you are accessing the website from and you consent to viewing absurdly silly yet potentially explicit content.
+        </p>
+        <button class="enter" onclick="closePopup()" style="font-family: Arial, sans-serif;">I am 18 or older - Enter</button>
+        <button class="exit" onclick="exitSite()" style="font-family: Arial, sans-serif;">I am under 18 - Exit</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <!-- Styling -->
 
 <style>
@@ -112,7 +136,93 @@ h1 a:hover {
 }
 
 
+/* Pop Up Window */
 
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 41, 41, 0.9);
+    color: rgb(255, 255, 255);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.popup-content {
+    background: rgb(237, 42, 255);
+    color: rgb(255, 255, 255);
+    padding: 1em;
+    border-radius: 0.5em;
+    text-align: center;
+    max-width: 60vw;
+    box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 1.5em 1em rgba(255, 48, 252, 0.9); /* Pink glow */
+    
+    /* Initial state for scaling */
+    transform: scale(0); /* Start smaller */
+    opacity: 0; /* Make it invisible initially */
+    
+    /* Animation */
+    animation: scaleUp 0.8s ease-out forwards; /* Apply the scale-up animation */
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0); /* Start smaller */
+        opacity: 0; /* Invisible */
+    }
+    100% {
+        transform: scale(1); /* End at original size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.popup h1 {
+    font-size: 1.92em;
+    margin-bottom: 0.6em;
+}
+
+.popup p {
+    font-size: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+.popup button {
+    font-size: 1.25em;
+    padding: 0.625em 1.25em;
+    margin: 0.3125em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    width: 14em;
+    max-width: 100%;
+    height: 3em;
+    max-height: 100%;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+}
+
+.popup button:hover {
+    transform: scale(1.07); /* Slightly enlarge the button on hover */
+}
+
+.popup .enter {
+    background-color: rgb(113, 210, 113);
+    color: white;
+    cursor: url('Cursor/CursorHand.png'), auto;
+}
+
+.popup .exit {
+    background-color: rgb(137, 132, 135);
+    color: white;
+    cursor: url('Cursor/CursorHand.png'), auto;
+}
 
 </style>
 
@@ -249,6 +359,41 @@ window.addEventListener('resize', () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
     }, 200);
 });
+
+
+
+
+
+// Pop Up Window 
+
+// Check if the popup has already been shown using localStorage
+if (!localStorage.getItem('popupShown')) {
+    // Show the popup on the first visit (new tab/window)
+    window.onload = function () {
+        document.getElementById('agePopup').style.display = 'flex';
+        localStorage.setItem('popupShown', 'true');  // Set the flag in localStorage to prevent future popups
+    };
+} else if (!sessionStorage.getItem('popupSessionShown')) {
+    // If localStorage flag exists but sessionStorage flag is not set, this is a fresh tab/window
+    window.onload = function () {
+        document.getElementById('agePopup').style.display = 'flex';
+        sessionStorage.setItem('popupSessionShown', 'true'); // Prevent the popup in the same session
+    };
+} else {
+    // Hide the popup if the flag is already set
+    document.getElementById('agePopup').style.display = 'none';
+}
+
+// Close the popup
+function closePopup() {
+    document.getElementById('agePopup').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Allow scrolling again
+}
+
+// Redirect to another site
+function exitSite() {
+    window.location.href = 'https://www.google.com';
+}
 
     </script>
 
