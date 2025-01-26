@@ -402,10 +402,9 @@ document.querySelector('.back-button').addEventListener('click', function (event
     }, 10); // Small timeout to ensure flag is set before page navigation
 });
 
-// Close the popup
+// Modify the closePopup function to navigate to index.html instead of just closing
 function closePopup() {
-    document.getElementById('agePopup').style.display = 'none';
-    document.body.style.overflow = 'auto'; // Allow scrolling again
+    window.location.href = 'index.html'; // Redirect the user to index.html when the "enter" button is clicked
 }
 
 // Redirect to another site
