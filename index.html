@@ -281,6 +281,7 @@ h1 a:hover {
     }
     
 
+    // Parametric Figure
 
 
 // Scene Setup
@@ -312,7 +313,7 @@ const loader = new THREE.GLTFLoader();
 let parametricFigure; // Store the model for later use
 
 loader.load(
-    './models/parametricfigure.glb',
+    './models/parametricfigure.glb',  // Ensure this path is correct
     function (gltf) {
         parametricFigure = gltf.scene; // Assign the loaded model to parametricFigure
         scene.add(parametricFigure);
@@ -330,7 +331,7 @@ loader.load(
         let oscillationSpeed = isMobile ? 0.0005 : 0.0005;
         let oscillationAmplitude = isMobile ? 13 : 13;
 
-        // Start animation only after the model has been loaded
+        // Start the animation after the model is loaded
         function animate() {
             if (document.hidden) return; // Skip rendering when the tab is not visible
 
@@ -348,6 +349,7 @@ loader.load(
     },
     undefined,
     function (error) {
+        // Handle any errors (optional, but recommended for debugging)
         console.error('Error loading the model:', error);
     }
 );
