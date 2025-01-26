@@ -283,8 +283,6 @@ h1 a:hover {
 
 
 
-// Parametric Floating Figure
-
 // Scene Setup
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -311,10 +309,12 @@ scene.add(directionalLight);
 
 // Load 3D Model
 const loader = new THREE.GLTFLoader();
+let parametricFigure; // Store the model for later use
+
 loader.load(
     './models/parametricfigure.glb',
     function (gltf) {
-        const parametricFigure = gltf.scene;
+        parametricFigure = gltf.scene; // Assign the loaded model to parametricFigure
         scene.add(parametricFigure);
         parametricFigure.scale.set(0.115, 0.115, 0.115);
         parametricFigure.position.set(0, 0, 0);
@@ -330,13 +330,17 @@ loader.load(
         let oscillationSpeed = isMobile ? 0.0005 : 0.0005;
         let oscillationAmplitude = isMobile ? 13 : 13;
 
+        // Start animation only after the model has been loaded
         function animate() {
             if (document.hidden) return; // Skip rendering when the tab is not visible
 
             requestAnimationFrame(animate);
 
-            parametricFigure.position.y = Math.sin(Date.now() * oscillationSpeed) * oscillationAmplitude;
-            parametricFigure.rotation.y += 0.007;
+            // Ensure parametricFigure is available before using it
+            if (parametricFigure) {
+                parametricFigure.position.y = Math.sin(Date.now() * oscillationSpeed) * oscillationAmplitude;
+                parametricFigure.rotation.y += 0.007;
+            }
 
             renderer.render(scene, camera);
         }
@@ -358,6 +362,7 @@ window.addEventListener('resize', () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
     }, 200);
 });
+
 
 
 
