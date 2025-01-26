@@ -386,6 +386,13 @@ if (!localStorage.getItem('popupShown')) {
     document.getElementById('agePopup').style.display = 'none';
 }
 
+// Prevent the pop-up from showing when the back button is pressed
+document.querySelector('.back-button').addEventListener('click', function (event) {
+    // Prevent the pop-up from appearing when the back button is clicked
+    sessionStorage.setItem('popupSessionShown', 'true'); // Prevent pop-up in the current session
+    document.getElementById('agePopup').style.display = 'none'; // Hide the pop-up
+});
+
 // Close the popup
 function closePopup() {
     document.getElementById('agePopup').style.display = 'none';
@@ -396,6 +403,7 @@ function closePopup() {
 function exitSite() {
     window.location.href = 'https://www.google.com';
 }
+
 
     </script>
 
