@@ -283,7 +283,7 @@ h1 a:hover {
 
 
 
-    
+
 
 // Parametric Figure
 
@@ -382,7 +382,7 @@ if (!sessionStorage.getItem('modelLoaded')) {
 // Pop Up Window 
 
 // Check if the popup has already been shown using localStorage
-if (!localStorage.getItem('popupShown')) {
+if (!localStorage.getItem('popupShown') && !localStorage.getItem('indexButtonPressed')) {
     // Wait for the page to load fully
     window.onload = function () {
         // Delay the popup appearance (e.g., 2 seconds after the page loads)
@@ -391,17 +391,17 @@ if (!localStorage.getItem('popupShown')) {
             localStorage.setItem('popupShown', 'true');  // Set the flag in localStorage to prevent future popups
         }, 2000); // 2000ms = 2 seconds delay
     };
-} else if (!sessionStorage.getItem('popupSessionShown')) {
+} else if (!sessionStorage.getItem('popupSessionShown') && !localStorage.getItem('indexButtonPressed')) {
     // If localStorage flag exists but sessionStorage flag is not set, this is a fresh tab/window
     window.onload = function () {
         // Delay the popup appearance (e.g., 2 seconds after the page loads)
         setTimeout(function() {
             document.getElementById('agePopup').style.display = 'flex'; // Show the popup
             sessionStorage.setItem('popupSessionShown', 'true'); // Prevent the popup in the same session
-        }, 800); // 2000ms = 2 seconds delay
+        }, 700); // 2000ms = 2 seconds delay
     };
 } else {
-    // Hide the popup if the flag is already set
+    // Hide the popup if the flag is already set or if the index button was pressed
     document.getElementById('agePopup').style.display = 'none';
 }
 
@@ -415,6 +415,11 @@ function closePopup() {
 function exitSite() {
     window.location.href = 'https://www.google.com';
 }
+
+// Prevent popup from showing again when the "index" button is pressed
+document.querySelector('.back-button').addEventListener('click', function () {
+    localStorage.setItem('indexButtonPressed', 'true');  // Set flag when index button is pressed
+});
 
 
     </script>
