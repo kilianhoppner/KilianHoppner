@@ -8,11 +8,11 @@
 }
 
 body {
-    background: linear-gradient(to bottom, rgb(255, 29, 184), rgb(68, 15, 226), rgb(15, 226, 54)); /* Gradient from pink to blue to green */
+    background: linear-gradient(rgb(255, 29, 184), rgb(68, 15, 226), rgb(15, 226, 54)); /* Gradient from pink to blue to green */
     margin-top: 1%;
     margin-right: 1%;
     margin-left: 1%;
-    height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    height: 100%; /* Ensure the body takes up the full height of the viewport */
     overflow-x: hidden;
     background-attachment: fixed; /* Optional: This keeps the gradient fixed when scrolling */
 }
