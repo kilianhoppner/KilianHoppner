@@ -292,15 +292,15 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(0, 50, 220);
 
-const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "low-power" });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit the pixel ratio to 2
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Reduce pixel ratio for mobile
 renderer.domElement.style.background = 'none';
 renderer.domElement.style.position = 'absolute';
 renderer.domElement.style.top = '24vh';
 renderer.domElement.style.left = '50vw';
 renderer.domElement.style.transform = 'translateX(-50%)';
-renderer.domElement.style.pointerEvents = 'none'; // Disable interaction with the canvas
+renderer.domElement.style.pointerEvents = 'none';
 renderer.domElement.style.zIndex = '1000';
 document.body.appendChild(renderer.domElement);
 
@@ -313,12 +313,12 @@ scene.add(directionalLight);
 
 // Load 3D Model
 const loader = new THREE.GLTFLoader();
-let parametricFigure; // Store the model for later use
+let parametricFigure;
 
 loader.load(
-    './models/parametricfigure.glb',  // Ensure this path is correct
+    './models/parametricfigure.glb', // Ensure this path is correct
     function (gltf) {
-        parametricFigure = gltf.scene; // Assign the loaded model to parametricFigure
+        parametricFigure = gltf.scene;
         scene.add(parametricFigure);
         parametricFigure.scale.set(0.115, 0.115, 0.115);
         parametricFigure.position.set(0, 0, 0);
@@ -329,18 +329,16 @@ loader.load(
             }
         });
 
-        // Mobile optimization
         const isMobile = window.innerWidth <= 768;
         let oscillationSpeed = isMobile ? 0.0005 : 0.0005;
         let oscillationAmplitude = isMobile ? 13 : 13;
 
-        // Start the animation after the model is loaded
+        // Start the animation
         function animate() {
             if (document.hidden) return; // Skip rendering when the tab is not visible
 
             requestAnimationFrame(animate);
 
-            // Ensure parametricFigure is available before using it
             if (parametricFigure) {
                 parametricFigure.position.y = Math.sin(Date.now() * oscillationSpeed) * oscillationAmplitude;
                 parametricFigure.rotation.y += 0.007;
@@ -352,7 +350,6 @@ loader.load(
     },
     undefined,
     function (error) {
-        // Handle any errors (optional, but recommended for debugging)
         console.error('Error loading the model:', error);
     }
 );
@@ -368,11 +365,21 @@ window.addEventListener('resize', () => {
     }, 200);
 });
 
+// Use passive scroll listeners
+window.addEventListener(
+    'scroll',
+    () => {
+        // Throttled scroll handler (if needed)
+    },
+    { passive: true }
+);
+
 // Ensure page refresh and model loads on first open
 if (!sessionStorage.getItem('modelLoaded')) {
     sessionStorage.setItem('modelLoaded', 'true');
     window.location.reload();
 }
+
 
 
 
