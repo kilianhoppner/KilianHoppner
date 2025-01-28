@@ -152,8 +152,8 @@ i {
 .back-button:hover {
     /* color: red;  */
     /* border-color: red;  */
-    box-shadow: 8px 8px 20px rgba(255, 255, 0, 1.2); /* Enhanced shadow and stronger inner shine on hover */
-    transform: translateY(-4px); /* Button appears to lift slightly on hover */
+    box-shadow: 8px 8px 25px rgba(255, 255, 0, 1.2); /* Enhanced shadow and stronger inner shine on hover */
+    transform: translateY(-4.5px); /* Button appears to lift slightly on hover */
     background: yellow;
 }
 
