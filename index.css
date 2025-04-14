@@ -4,7 +4,7 @@
     border: none;
     /* cursor: pointer; */
     font-family: 'AS60';
-    cursor: url('Cursor/CursorHand.png'), auto;
+    /* cursor: url('Cursor/CursorHand.png'), auto; */
 }
 
 body {
@@ -105,7 +105,7 @@ a {
 /* Hyperlinks: */
 .hyperlink:hover {
     color: yellow; /* Color on hover */
-    cursor: url('Cursor/CursorHand.png'), auto;
+    /* cursor: url('Cursor/CursorHand.png'), auto; */
 }
 
 
